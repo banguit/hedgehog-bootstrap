@@ -41,27 +41,69 @@ module.exports = function(grunt) {
         watch: {
             less: {
                 files: 'less/*.less',
-                tasks: 'less'
+                tasks: 'default'
             }
+        },
+        clean: {
+            dist: ['dist/'],
+            docs: ['docs/'],
+            docs_dist: ['docs/dist/css'],
+            gh_pages: ['_gh_pages/'],
+            docs_dist_css: [
+                'docs/dist/css/<%= pkg.name %>.css',
+                'docs/dist/css/<%= pkg.name %>.min.css',
+                'docs/dist/css/<%= pkg.name %>.css.map'
+            ]
         },
         // Copy documentation files
         copy: {
             fonts: {
                 expand: true,
                 flatten: true,
-                src: ['bootstrap/fonts/**', 'fonts/**'],
-                dest: 'dist/fonts',
-                filter: 'isFile'
+                src: ['bootstrap/fonts/*'],
+                dest: 'dist/fonts'
             },
             docs: {
                 expand: true,
-                cwd: './dist',
-                src: [
-                    '{css,js}/*.min.*',
-                    'css/*.map',
-                    'fonts/*'
-                ],
-                dest: 'docs/dist'
+                cwd: 'bootstrap/docs/',
+                src: ['**'],
+                dest: 'docs'
+            },
+            docs_dist: {
+                expand: true,
+                cwd: 'dist/',
+                src: ['**'],
+                dest: 'docs/dist/'
+            },
+            docs_dist_css: {
+                src: 'docs/dist/css/<%= pkg.name %>.css',
+                dest: 'docs/dist/css/bootstrap.css'
+            },
+            docs_dist_min_css: {
+                src: 'docs/dist/css/<%= pkg.name %>.min.css',
+                dest: 'docs/dist/css/bootstrap.min.css'
+            },
+            docs_dist_css_map: {
+                src: 'docs/dist/css/<%= pkg.name %>.css.map',
+                dest: 'docs/dist/css/bootstrap.css.map'
+            },
+            dist_js: {
+                expand: true,
+                cwd: 'bootstrap/dist/js',
+                src: ['**'],
+                dest: 'dist/js/'
+            }
+        },
+        mkdir: {
+            dist: {
+                options: {
+                    create: ['./dist']
+                }
+            }
+        },
+        shell: {
+            jekyll_build: {
+                command: 'jekyll build'
             }
         }
     });
@@ -69,10 +111,30 @@ module.exports = function(grunt) {
     // Load tasks
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-mkdir');
+    grunt.loadNpmTasks('grunt-shell');
 
     // Register default tasks
-    grunt.registerTask('default', [ 'less', 'copy' ]);
+    grunt.registerTask('default',
+        [
+            'clean:dist',
+            'clean:docs',
+            'clean:gh_pages',
+            'mkdir',
+            'less',
+            'copy:fonts',
+            'copy:dist_js',
+            'copy:docs',
+            'copy:docs_dist',
+            'copy:docs_dist_css',
+            'copy:docs_dist_min_css',
+            'copy:docs_dist_css_map',
+            'clean:docs_dist_css',
+            'shell'
+        ]
+    );
 
     // CSS distribution task.
     grunt.registerTask('compile', [ 'less' ]);

@@ -27,3 +27,9 @@ Run `grunt compile` to compile the Css from Less and put hedgehog.css and hedgeh
 
 #### Watch - `grunt watch`
 This is a convenience method for watching just Less files and automatically building them whenever you save.
+
+### Run documentation locally by Jekyll
+
+1. Install Jekyll - `sudo gem install jekyll`
+2. Run command from root of source folder `jekyll serve`. Make sure you run `grunt` command before.
+3. # => Now browse to http://0.0.0.0:9001/
