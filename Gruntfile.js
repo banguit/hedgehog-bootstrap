@@ -95,6 +95,7 @@ module.exports = function(grunt) {
             }
         },
         mkdir: {
+            // Create distributive directory
             dist: {
                 options: {
                     create: ['./dist']
@@ -102,6 +103,7 @@ module.exports = function(grunt) {
             }
         },
         shell: {
+            // Build documentation
             jekyll_build: {
                 command: 'jekyll build'
             }
