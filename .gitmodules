@@ -1,3 +1,6 @@
 [submodule "bootstrap"]
 	path = bootstrap
 	url = https://github.com/twbs/bootstrap.git
+[submodule "dist/app/lib/mvc"]
+	path = dist/app/lib/mvc
+	url = https://github.com/rhysbrettbowen/PlastronJS.git
