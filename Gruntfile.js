@@ -45,7 +45,7 @@ module.exports = function(grunt) {
             }
         },
         clean: {
-            dist: ['dist/'],
+            dist: ['dist/css', 'dist/fonts', 'dist/js'],
             docs: ['docs/'],
             docs_dist: ['docs/dist/css'],
             gh_pages: ['_gh_pages/'],

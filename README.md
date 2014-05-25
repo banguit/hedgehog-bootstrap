@@ -28,4 +28,7 @@ This is a convenience method for watching just Less files and automatically buil
 ### Run documentation locally by Jekyll
 1. Install Jekyll - `sudo gem install jekyll`
 2. Run command from root of source folder `jekyll serve`. Make sure you run `grunt` command before.
-3. # => Now browse to http://0.0.0.0:9001/
+3. Now browse to http://0.0.0.0:9001/
+
+### Directory structure
+1. bootstrap - contains latest version of Twitter Bootstrap 3 version
