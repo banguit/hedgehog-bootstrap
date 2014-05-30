@@ -1,9 +1,3 @@
 [submodule "bootstrap"]
 	path = bootstrap
 	url = https://github.com/twbs/bootstrap.git
-[submodule "dist/app/lib/mvc"]
-	path = dist/app/lib/mvc
-	url = https://github.com/rhysbrettbowen/PlastronJS.git
-[submodule "dist/app/lib/closure-library"]
-	path = dist/app/lib/closure-library
-	url = https://banguit@github.com/google/closure-library.git
