@@ -2,6 +2,39 @@
 @import "variables.less";
 @import "button.less";
 
+//== Pages
+@import "home.less";
+
+//== Tags
+body {
+  background: url('../images/bg.jpg');
+}
+
+//== Hedgehog specific classes
+
+//== Header
+a.logo {
+  display: inline-block;
+  width: 200px;
+  height: 75px;
+  line-height: 16px;
+  font-family: @headings-font-family;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #8a8a8a;
+  text-transform: uppercase;
+  background: transparent url('../images/logo.svg') no-repeat scroll left center;
+  background-size: 75px;
+  padding-left: 85px !important;
+  padding-top: 27px !important;
+
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+    color: #8a8a8a;
+  }
+}
+
+
 
 //== Animation
 //

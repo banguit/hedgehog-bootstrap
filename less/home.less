@@ -1,0 +1,52 @@
+#home {
+
+  header {
+    position: relative;
+    height: 125px;
+
+    .logo {
+      position: absolute;
+      top: 20px;
+    }
+
+    .navbar-nav {
+      float: none;
+      height: 125px;
+      margin-left: 230px;
+
+      li {
+        padding: 0;
+
+        a {
+          display: block;
+          height: 125px;
+          line-height: 90px;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-family: @headings-font-family;
+          color: #8a8a8a;
+          letter-spacing: 0.75px;
+          transition: all 0.2s ease 0s;
+
+          &:hover, &:active, &.active {
+            color: #fff;
+            opacity: 0.8;
+          }
+
+          &.red:hover, &.red:active, &.red.active {
+            background-color: #e87352;
+          }
+
+          &.green:hover, &.green:active, &.green.active {
+            background-color: #60cd9b;
+          }
+
+          &.yellow:hover, &.yellow:active, &.yellow.active {
+            background-color: #ebc85e;
+          }
+        }
+      }
+    }
+  }
+}
