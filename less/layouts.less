@@ -1,0 +1,225 @@
+// == Tags
+// -------------------------
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('../images/bg.jpg');
+}
+
+body {
+  background: transparent;
+  overflow: hidden;
+}
+
+//== Animation
+a, input[type="text"], button {
+  transition: color 0.3s ease 0s, text-decoration 0.3s ease 0s, background 0.3s ease 0s;
+}
+
+//== Headers
+h1, h2, h3, h4, h5, h6 {
+  color: #242628;
+  font-weight: 300;
+  line-height: 1;
+  text-rendering: optimizelegibility;
+}
+
+// == Header
+// -------------------------
+.wrapper {
+  transition: all 0.4s ease 0s;
+
+  header {
+    height: 125px;
+
+    a {
+      outline: none !important;
+    }
+
+    a.logo {
+      position: absolute;
+      top: 20px;
+      display: inline-block;
+      width: 235px;
+      height: 75px;
+      line-height: 16px;
+      font-family: @headings-font-family;
+      font-size: 22px;
+      letter-spacing: 0.75px;
+      font-weight: bold;
+      color: #8a8a8a;
+      text-transform: uppercase;
+      background: transparent url('../images/logo.svg') no-repeat scroll left center;
+      background-size: 75px;
+      padding-left: 82px !important;
+      padding-top: 20px !important;
+
+      &:hover, &:active, &:focus {
+        text-decoration: none;
+        color: #8a8a8a;
+      }
+
+      small {
+        font-size: 9px;
+        font-weight: lighter;
+        letter-spacing: 0.75px;
+        padding-left: 1px;
+      }
+    }
+
+    .navbar {
+      position: inherit;
+    }
+
+    .navbar-nav {
+      float: none;
+      height: 125px;
+      margin-left: 230px;
+
+      li {
+        padding: 0;
+
+        a {
+          display: block;
+          height: 125px;
+          line-height: 90px;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-family: @headings-font-family;
+          color: #8a8a8a;
+          letter-spacing: 0.75px;
+          transition: all 0.2s ease 0s;
+
+          &:hover, &:active, &.active {
+            color: #fff;
+            opacity: 0.8;
+          }
+
+          &.red:hover, &.red:active, &.red.active {
+            background-color: #e87352;
+          }
+
+          &.green:hover, &.green:active, &.green.active {
+            background-color: #60cd9b;
+          }
+
+          &.yellow:hover, &.yellow:active, &.yellow.active {
+            background-color: #ebc85e;
+          }
+        }
+      }
+    }
+
+    .page-responsive-header {
+      display: none;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      transition: all 0.4s ease 0s;
+
+      .navbar-header.navbar-inverse {
+        position: relative;
+        line-height: 50px;
+        background-color: #3a3a3a;
+
+        .navbar-text {
+          position: absolute;
+          width: 100%;
+          font-family: @headings-font-family;
+          font-size: 20px;
+          font-weight: bold;
+          letter-spacing: 5px;
+          color: #fff;
+          margin-bottom: 10px;
+          margin-top: 13px;
+          text-align: center;
+          z-index: 9;
+          display: none;
+          text-transform: uppercase;
+
+          @media (max-width: @screen-xs-max) {
+            display: block;
+          }
+        }
+
+        .navbar-toggle {
+          border: 0;
+          margin: 8px 15px;
+          z-index: 10;
+
+          .icon-bar {
+            border-radius: 0;
+          }
+
+          .icon-bar:nth-child(4) {
+            width: 70%;
+          }
+        }
+
+        .navbar-toggle:hover,
+        .navbar-toggle:focus {
+          background-color: transparent;
+        }
+      }
+
+      @media (max-width: @screen-xs-max) {
+        display: block;
+      }
+    }
+
+    @media (max-width: @screen-xs-max) {
+
+    }
+
+    @media (max-width: @screen-md-max) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: @screen-xs-max) {
+    &.active {
+      left: -170px;
+
+      header {
+        .page-responsive-header {
+          left: -170px;
+        }
+
+        .navbar-nav {
+          position: absolute;
+          right: 0px;
+          li {
+            float: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: @screen-md-max) {
+    width: 100%;
+  }
+}
+
+// == Ajax overlay
+// -------------------------
+#ajax-overlay {
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  div {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+  }
+}
+

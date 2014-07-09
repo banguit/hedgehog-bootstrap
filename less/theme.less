@@ -1,76 +1,10 @@
+//== Bootstrap overloads
 @import "../bootstrap/less/bootstrap.less";
 @import "variables.less";
 @import "button.less";
 
+//== Base layouts stylesheets
+@import "layouts.less";
+
 //== Pages
 @import "home.less";
-
-//== Tags
-body {
-  background: url('../images/bg.jpg');
-}
-
-//====
-//== Hedgehog specific classes
-//====
-
-//== Header
-a.logo {
-  display: inline-block;
-  width: 235px;
-  height: 75px;
-  line-height: 16px;
-  font-family: @headings-font-family;
-  font-size: 22px;
-  letter-spacing: 0.75px;
-  font-weight: bold;
-  color: #8a8a8a;
-  text-transform: uppercase;
-  background: transparent url('../images/logo.svg') no-repeat scroll left center;
-  background-size: 75px;
-  padding-left: 82px !important;
-  padding-top: 20px !important;
-
-  &:hover, &:active, &:focus {
-    text-decoration: none;
-    color: #8a8a8a;
-  }
-
-  small {
-    font-size: 9px;
-    font-weight: lighter;
-    letter-spacing: 0.75px;
-    padding-left: 1px;
-  }
-}
-
-//== Ajax overlay
-#ajax-overlay {
-  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
-  display: none;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-
-  div {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-  }
-}
-
-//== Animation
-//
-a, input[type="text"], button {
-  transition: color 0.3s ease 0s, text-decoration 0.3s ease 0s, background 0.3s ease 0s;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #242628;
-  font-weight: 300;
-  line-height: 1;
-  text-rendering: optimizelegibility;
-}
