@@ -9,6 +9,7 @@ html {
 body {
   background: transparent;
   overflow: hidden;
+  transition: all 0.4s ease 0s;
 }
 
 //== Animation
@@ -109,6 +110,10 @@ h1, h2, h3, h4, h5, h6 {
           }
         }
       }
+
+      @media (max-width: @screen-xs-max) {
+        display: none;
+      }
     }
 
     .page-responsive-header {
@@ -170,29 +175,43 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
 
-    @media (max-width: @screen-xs-max) {
-
-    }
-
     @media (max-width: @screen-md-max) {
       width: 100%;
     }
   }
 
   @media (max-width: @screen-xs-max) {
+    header {
+
+      a.logo {
+        top: 60px;
+      }
+
+    }
+
     &.active {
       left: -170px;
 
       header {
+        padding-top: 0px;
+
         .page-responsive-header {
           left: -170px;
         }
 
         .navbar-nav {
           position: absolute;
-          right: 0px;
+          right: 0;
+          top: 0;
+          height: 100%;
+          width: 170px;
+          margin: 0;
+          display: block;
+          background-color: #222;
+
           li {
             float: none;
+            width: 170px;
           }
         }
       }
