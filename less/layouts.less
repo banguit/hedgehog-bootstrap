@@ -4,10 +4,14 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url('../images/bg.jpg');
+  height: 100%;
+  width: 100%;
 }
 
 body {
   background: transparent;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 //== Animation
@@ -26,7 +30,9 @@ h1, h2, h3, h4, h5, h6 {
 // == Header
 // -------------------------
 .wrapper {
-  transition: all 0.4s ease 0s;
+
+  position: relative;
+  overflow-x: hidden;
 
   header {
     height: 125px;
@@ -80,7 +86,6 @@ h1, h2, h3, h4, h5, h6 {
 
         a {
           display: block;
-          height: 125px;
           line-height: 90px;
           text-align: center;
           text-transform: uppercase;
@@ -108,10 +113,6 @@ h1, h2, h3, h4, h5, h6 {
           }
         }
       }
-
-      @media (max-width: @screen-xs-max) {
-        display: none;
-      }
     }
 
     .page-responsive-header {
@@ -121,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
       top: 0;
       left: 0;
       z-index: 100;
-      transition: all 0.4s ease 0s;
+      transition: left 0.4s ease 0s;
 
       .navbar-header.navbar-inverse {
         position: relative;
@@ -152,6 +153,7 @@ h1, h2, h3, h4, h5, h6 {
           border: 0;
           margin: 8px 15px;
           z-index: 10;
+          cursor: pointer;
 
           .icon-bar {
             border-radius: 0;
@@ -198,6 +200,11 @@ h1, h2, h3, h4, h5, h6 {
         background-color: #222;
         margin: 0;
         transition: right 0.4s ease 0s;
+
+        li {
+          float: none;
+          width: 170px;
+        }
       }
 
     }
@@ -206,7 +213,7 @@ h1, h2, h3, h4, h5, h6 {
       margin-top: 30px;
     }
 
-    &.active {
+    &.responsive-menu {
       header {
         padding-top: 0px;
 
@@ -219,18 +226,16 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         .navbar-nav {
-          display: block;
+          position: fixed;
+          overflow: auto;
           right: 0;
-
-          li {
-            float: none;
-            width: 170px;
-          }
         }
       }
 
       #content {
-        margin-left: -170px;
+        transition: all 0.4s ease 0s;
+        position: relative;
+        left: -170px;
       }
     }
   }
