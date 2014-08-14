@@ -35,9 +35,10 @@ h1, h2, h3, h4, h5, h6 {
 // == Header
 // -------------------------
 .wrapper {
-
   position: relative;
-  overflow-x: hidden;
+  top: 0;
+  left: 0;
+  transition: all 0.4s ease 0s;
 
   header {
     height: 125px;
@@ -126,8 +127,8 @@ h1, h2, h3, h4, h5, h6 {
       width: 100%;
       top: 0;
       left: 0;
-      z-index: 100;
-      transition: left 0.4s ease 0s;
+      z-index: 1001;
+      transition: all 0.4s ease 0s;
 
       .navbar-header.navbar-inverse {
         position: relative;
@@ -215,30 +216,40 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     #content {
-      transition: all 0.4s ease 0s;
       margin-top: 30px;
     }
 
+    &.responsive-menu:after {
+      content: '';
+      display: block;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      background: rgba(0,0,0,0.5);
+    }
+
     &.responsive-menu {
+//      position: fixed; // TODO: Required find solution to prevent scrolling and leave animation
+//      overflow: hidden;
+      left: -170px;
+
       header {
         padding-top: 0px;
-
-        a.logo {
-          left: -170px;
-        }
-
-        .page-responsive-header {
-          left: -170px;
-        }
 
         .navbar-nav {
           overflow: auto;
           right: 0;
+          z-index: 1001;
         }
       }
 
-      #content {
-        position: relative;
+      .page-responsive-header {
+        display: block;
         left: -170px;
       }
     }
@@ -259,7 +270,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 10002;
 
   div {
     left: 50%;
