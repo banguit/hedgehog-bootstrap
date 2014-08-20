@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   transition: all 0.4s ease 0s;
   padding: 0;
+  display: none; // wrapper should be hidden by default
 
   header {
     height: 125px;
@@ -280,6 +281,41 @@ h1, h2, h3, h4, h5, h6 {
   @media (max-width: @screen-md-max) {
     width: 100%;
   }
+}
+
+// == Splash screen
+// -------------------------
+.splash-screen {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  .logo {
+    display: 'none'; // 'inline-block' by default
+    position: absolute;
+    width: 280px;
+    height: 90px;
+    line-height: 17px;
+    font-family: @headings-font-family;
+    font-size: 30px;
+    letter-spacing: 0.75px;
+    font-weight: bold;
+    color: #8a8a8a;
+    text-transform: uppercase;
+    background: transparent url('../images/logo.svg') no-repeat scroll left center;
+    background-size: 90px;
+    padding-left: 95px;
+    padding-top: 26px;
+
+    small {
+      font-size: 10px;
+      font-weight: lighter;
+      letter-spacing: 0.75px;
+      padding-left: 2px;
+    }
+  }
+
 }
 
 // == Ajax overlay
