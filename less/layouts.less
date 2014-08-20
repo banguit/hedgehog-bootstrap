@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   transition: all 0.4s ease 0s;
   padding: 0;
-  display: none; // wrapper should be hidden by default
+  opacity: 0;
 
   header {
     height: 125px;
@@ -286,10 +286,13 @@ h1, h2, h3, h4, h5, h6 {
 // == Splash screen
 // -------------------------
 .splash-screen {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   overflow: hidden;
   height: 100%;
   width: 100%;
+  z-index: 100000;
 
   .logo {
     display: 'none'; // 'inline-block' by default
@@ -315,7 +318,6 @@ h1, h2, h3, h4, h5, h6 {
       padding-left: 2px;
     }
   }
-
 }
 
 // == Ajax overlay
