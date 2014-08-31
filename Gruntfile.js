@@ -60,7 +60,7 @@ module.exports = function(grunt) {
             fonts: {
                 expand: true,
                 flatten: true,
-                src: ['bootstrap/fonts/*'],
+                src: ['bootstrap/fonts/*', 'fontawesome/fonts/*'],
                 dest: 'dist/fonts'
             },
             docs: {
