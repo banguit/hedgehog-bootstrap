@@ -3,6 +3,7 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
   background: url('../images/bg.jpg');
 }
 
@@ -24,10 +25,12 @@ a, input[type="text"], button {
 
 //== Headers
 h1, h2, h3, h4, h5, h6 {
-  color: #595959;
-  font-weight: 300;
+  font-family: @headings-font-family;
+  color: #8a8a8a;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
   line-height: 1;
-  text-rendering: optimizelegibility;
 }
 
 // == Header
