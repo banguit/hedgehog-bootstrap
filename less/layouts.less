@@ -12,7 +12,7 @@ body {
   overflow-x: hidden;
 }
 
-@media (max-width: @screen-xs-max) {
+@media (max-width: @screen-sm-max) {
   html, body, .wrapper {
     width: 100%;
   }
@@ -295,11 +295,12 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  z-index: 10000;
+  z-index: 1003;
 
   .splash-screen-content {
-    position: relative;
-    display: none;
+    position: absolute;
+    display: block;
+    visibility: hidden;
     width: 280px;
     height: 90px;
 
@@ -392,7 +393,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10002;
+  z-index: 1002;
 
   div {
     left: 50%;

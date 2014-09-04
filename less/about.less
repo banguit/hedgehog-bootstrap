@@ -27,8 +27,25 @@
       color: #8a8a8a;
     }
 
-    .row div {
+    a:hover {
+      .fa-circle {
+        color: #717171;
+      }
+    }
+
+    .row > div {
       text-align: center;
+      height: 150px;
+
+      .fa-stack {
+        vertical-align: top;
+      }
+
+      span {
+        font-family: @headings-font-family;
+        display: block;
+        font-size: 12px;
+      }
     }
   }
 }
