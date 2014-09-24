@@ -3163,9 +3163,11 @@ input[type="button"].btn-block {
 }
 .collapse {
   display: none;
+  visibility: hidden;
 }
 .collapse.in {
   display: block;
+  visibility: visible;
 }
 tr.collapse.in {
   display: table-row;
@@ -3177,9 +3179,12 @@ tbody.collapse.in {
   position: relative;
   height: 0;
   overflow: hidden;
-  -webkit-transition: height 0.35s ease;
-  -o-transition: height 0.35s ease;
-  transition: height 0.35s ease;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
 }
 .caret {
   display: inline-block;
@@ -3829,9 +3834,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .tab-content > .tab-pane {
   display: none;
+  visibility: hidden;
 }
 .tab-content > .active {
   display: block;
+  visibility: visible;
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
@@ -3873,6 +3880,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-collapse.collapse {
     display: block !important;
+    visibility: visible !important;
     height: auto !important;
     padding-bottom: 0;
     overflow: visible !important;
@@ -8272,21 +8280,19 @@ h6 {
   }
 }
 .splash-screen {
-  position: absolute;
+  position: fixed;
   left: 50%;
   height: 100%;
   width: 50%;
   z-index: 1003;
-  border: 1px #f00 solid;
 }
 .splash-screen .splash-screen-content {
-  position: relative;
+  position: absolute;
   top: 100%;
-  left: -50%;
+  left: -140px;
   width: 280px;
   height: 90px;
   z-index: 1004;
-  border: 1px #0f0 solid;
 }
 .splash-screen .splash-screen-content .hedgehog {
   position: relative;
