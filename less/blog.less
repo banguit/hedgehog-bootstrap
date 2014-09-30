@@ -1,4 +1,4 @@
-#blog {
+#blog, #post {
   .photo {
     background: url('../images/blog.jpg') no-repeat center bottom scroll;
     -webkit-background-size: cover;
@@ -71,6 +71,35 @@
           max-width: 100%;
         }
       }
+
+    }
+  }
+}
+
+#post {
+
+  .photo {
+    h1 {
+      @media (max-width: @screen-xs-max) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .post-header {
+
+    .back-link {
+      display: table;
+      color: #a2a2a2;
+      font-size: 14px;
+      line-height: inherit;
+
+      span {
+        font-family: @font-family-sans-serif;
+      }
+    }
+
+    @media (max-width: @screen-xs-max) {
 
     }
   }
