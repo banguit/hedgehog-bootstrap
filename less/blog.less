@@ -13,8 +13,8 @@
 
     h1 {
       font-weight: bold;
-      font-size: 48px;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      font-size: 48px;
       color: #fff;
       margin-bottom: 40px;
       line-height: 80px;
@@ -78,29 +78,60 @@
 
 #post {
 
+  @media (max-width: @screen-xs-max) {
+    h1, .h1 {
+      font-size: 34px;
+    }
+    h2, .h2 {
+      font-size: 28px;
+    }
+    h3, .h3 {
+      font-size: 22px;
+    }
+    h4, .h4 {
+      font-size: 16px;
+    }
+    h5, .h5 {
+      font-size: 12px;
+    }
+    h6, .h6 {
+      font-size: 10px;
+    }
+  }
+
   .photo {
+    background-position: center center;
+
     h1 {
+      padding-top: 15px;
+      line-height: 55px;
+
       @media (max-width: @screen-xs-max) {
-        font-size: 32px;
+        line-height: 40px;
+        font-size: 34px;
       }
     }
   }
 
-  .post-header {
+  .content {
+    .post {
+      .post-header {
 
-    .back-link {
-      display: table;
-      color: #a2a2a2;
-      font-size: 14px;
-      line-height: inherit;
+        &:after {
+          margin: 25px 0 20px;
+        }
 
-      span {
-        font-family: @font-family-sans-serif;
+        .back-link {
+          display: table;
+          color: #a2a2a2;
+          font-size: 14px;
+          line-height: inherit;
+
+          span {
+            font-family: @font-family-sans-serif;
+          }
+        }
       }
-    }
-
-    @media (max-width: @screen-xs-max) {
-
     }
   }
 }
