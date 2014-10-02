@@ -248,6 +248,40 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
       }
     }
+
+    @media (max-width: @screen-md-min) {
+      padding: 27px 15px 20px;
+
+      .footer-links {
+        font-size: 2em;
+
+        a {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    @media (max-width: @screen-xs-min) {
+      span.copy {
+        border-top: 1px solid #ababab;
+        display: inline-block;
+        line-height: 25px;
+        margin: 6px 0 0;
+        text-align: center;
+        width: 100%;
+      }
+
+      .footer-links {
+        width: 100%;
+        text-align: center;
+
+        a {
+          display: inline-block;
+          width: 18%;
+          float: left;
+        }
+      }
+    }
   }
 
   @media (max-width: @screen-xs-max) {
