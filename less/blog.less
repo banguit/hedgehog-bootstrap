@@ -81,16 +81,20 @@
         border-top: 1px solid #ddd;
         padding: 15px 0;
 
-        .fb-like { opacity: 0; height: 0px; overflow: hidden; margin-right: 15px; float: left; }
+        td {
+          vertical-align: baseline !important;
+        }
+
+        .fb-like { opacity: 0; height: 0px; overflow: hidden; margin-right: 15px; float: left; display: inline-block; }
         .fb-like[fb-xfbml-state="rendered"] { opacity: 1.0; height: 21px; overflow: visible; }
 
         #___plusone_0 {
           width: 75px !important;
-          float: left !important;
+          display: inline-block;
         }
 
         .twitter-share {
-          float: left;
+          display: inline-block;
         }
       }
     }
