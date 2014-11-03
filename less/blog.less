@@ -85,8 +85,12 @@
           vertical-align: baseline !important;
         }
 
-        .fb-like { opacity: 0; height: 0px; overflow: hidden; margin-right: 15px; float: left; display: inline-block; }
-        .fb-like[fb-xfbml-state="rendered"] { opacity: 1.0; height: 21px; overflow: visible; }
+        iframe.fb-like {
+          border: none;
+          overflow: hidden;
+          height: 21px;
+          width: 140px;
+        }
 
         #___plusone_0 {
           width: 75px !important;
