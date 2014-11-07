@@ -12,6 +12,12 @@
   <div class="bs-callout bs-callout-danger">
     <h4>Opt-in functionality</h4>
     <p>For performance reasons, the Tooltip and Popover data-apis are opt-in, meaning <strong>you must initialize them yourself</strong>.</p>
+    <p>One way to initialize all popovers on a page would be to select them by their <code>data-toggle</code> attribute:</p>
+{% highlight js %}
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+{% endhighlight %}
   </div>
   <div class="bs-callout bs-callout-warning">
     <h4>Popovers in button groups and input groups require special setting</h4>
@@ -120,10 +126,10 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
     <p>For proper cross-browser and cross-platform behavior, you must use the <code>&lt;a&gt;</code> tag, <i>not</i> the <code>&lt;button&gt;</code> tag, and you also must include a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#tabindex"><code>tabindex</code></a> attribute.</p>
   </div>
   <div class="bs-example" style="padding-bottom: 24px;">
-    <a href="#" tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+    <a href="#" tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
   </div>
 {% highlight html %}
-<a href="#" tabindex="0" class="btn btn-lg btn-danger" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+<a href="#" tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
 {% endhighlight %}
 
 
