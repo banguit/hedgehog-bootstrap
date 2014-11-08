@@ -47,6 +47,7 @@ module.exports = function(grunt) {
         clean: {
             dist: ['dist/css', 'dist/fonts', 'dist/js'],
             docs: ['docs/'],
+            ghost_folder: ['ghost/'],
             docs_dist: ['docs/dist/css'],
             gh_pages: ['_gh_pages/'],
             docs_dist_css: [
@@ -62,6 +63,12 @@ module.exports = function(grunt) {
                 flatten: true,
                 src: ['bootstrap/fonts/*', 'fontawesome/fonts/*'],
                 dest: 'dist/fonts'
+            },
+            grunt_folder: {
+                expand: true,
+                cwd: 'bootstrap/grunt/',
+                src: ['**'],
+                dest: 'grunt/'
             },
             docs: {
                 expand: true,
@@ -121,11 +128,13 @@ module.exports = function(grunt) {
     // Register default tasks
     grunt.registerTask('default',
         [
+            'clean:ghost_folder',
             'clean:dist',
             'clean:docs',
             'clean:gh_pages',
             'mkdir',
             'less',
+            'copy:grunt_folder',
             'copy:fonts',
             'copy:dist_js',
             'copy:docs',
