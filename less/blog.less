@@ -56,6 +56,7 @@
         .post-meta {
           color: #a2a2a2;
           font-size: 14px;
+          white-space: nowrap;
 
           .post-date:before, .tags:before { content: "\00a0 "; }
           .post-date:after { content: "\00a0 "; }
@@ -81,25 +82,29 @@
         border-top: 1px solid #ddd;
         padding: 15px 0;
 
-        td {
-          vertical-align: baseline !important;
-        }
-
-        iframe.fb-like {
-          border: none;
-          overflow: hidden;
-          height: 21px;
-          width: 140px;
-        }
-
-        #___plusone_0 {
-          width: 75px !important;
+        a {
           display: inline-block;
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          color: #fff;
+          text-align: center;
+          margin-right: 10px;
+
+          &.facebook {
+            background-color: #3c5a99;
+          }
+
+          &.googleplus {
+            background-color: #d34935;
+          }
+
+          &.twitter {
+            background-color: #00b0ed;
+          }
         }
 
-        .twitter-share {
-          display: inline-block;
-        }
+
       }
     }
   }
