@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://localhost:9001/</loc>
-    <lastmod>2014-11-07T12:59:25+02:00</lastmod>
+    <lastmod>2014-11-13T14:23:49+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -10,7 +10,7 @@
   
   <url>
     <loc>http://localhost:9001/about/</loc>
-    <lastmod>2014-11-07T12:59:25+02:00</lastmod>
+    <lastmod>2014-11-13T14:23:49+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -19,7 +19,7 @@
   
   <url>
     <loc>http://localhost:9001/browser-bugs/</loc>
-    <lastmod>2014-11-07T12:59:25+02:00</lastmod>
+    <lastmod>2014-11-13T14:23:49+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -28,7 +28,7 @@
   
   <url>
     <loc>http://localhost:9001/components/</loc>
-    <lastmod>2014-11-07T12:59:25+02:00</lastmod>
+    <lastmod>2014-11-13T14:23:49+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37,7 +37,7 @@
   
   <url>
     <loc>http://localhost:9001/css/</loc>
-    <lastmod>2014-11-07T12:59:25+02:00</lastmod>
+    <lastmod>2014-11-13T14:23:49+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -46,7 +46,7 @@
   
   <url>
     <loc>http://localhost:9001/customize/</loc>
-    <lastmod>2014-11-07T12:59:25+02:00</lastmod>
+    <lastmod>2014-11-13T14:23:49+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -55,7 +55,7 @@
   
   <url>
     <loc>http://localhost:9001/getting-started/</loc>
-    <lastmod>2014-11-07T12:59:25+02:00</lastmod>
+    <lastmod>2014-11-13T14:23:49+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -66,7 +66,7 @@
   
   <url>
     <loc>http://localhost:9001/javascript/</loc>
-    <lastmod>2014-11-07T12:59:25+02:00</lastmod>
+    <lastmod>2014-11-13T14:23:49+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -75,7 +75,7 @@
   
   <url>
     <loc>http://localhost:9001/migration/</loc>
-    <lastmod>2014-11-07T12:59:25+02:00</lastmod>
+    <lastmod>2014-11-13T14:23:49+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

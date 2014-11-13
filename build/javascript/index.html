@@ -122,11 +122,6 @@
   </div>
 
   <div class="bs-callout bs-callout-danger">
-    <h4>Component data attributes</h4>
-    <p>Don't use data attributes from multiple plugins on the same element. For example, a button cannot both have a tooltip and toggle a modal. To accomplish this, use a wrapping element.</p>
-  </div>
-
-  <div class="bs-callout bs-callout-danger">
     <h4>Plugin dependencies</h4>
     <p>Some plugins and CSS components depend on other plugins. If you include plugins individually, make sure to check for these dependencies in the docs. Also note that all plugins depend on jQuery (this means jQuery must be included <strong>before</strong> the plugin files). <a href="https://github.com/banguit/hedgehog-bootstrap/blob/v0.0.1/bower.json">Consult our <code>bower.json</code></a> to see which versions of jQuery are supported.</p>
   </div>
@@ -140,28 +135,33 @@ Liquid error: undefined method `join' for "\n$(document).off('.data-api')\n":Str
   <p>Alternatively, to target a specific plugin, just include the plugin's name as a namespace along with the data-api namespace like this:</p>
 Liquid error: undefined method `join' for "\n$(document).off('.alert.data-api')\n":String
 
+  <div class="bs-callout bs-callout-danger">
+    <h4>Only one plugin per element via data attributes</h4>
+    <p>Don't use data attributes from multiple plugins on the same element. For example, a button cannot both have a tooltip and toggle a modal. To accomplish this, use a wrapping element.</p>
+  </div>
+
   <h3 id="js-programmatic-api">Programmatic API</h3>
   <p>We also believe you should be able to use all Bootstrap plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
 Liquid error: undefined method `join' for "\n$('.btn.danger').button('toggle').addClass('fat')\n":String
 
   <p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates a plugin with default behavior):</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc8fe5c0>
+Liquid error: undefined method `join' for #<String:0x007f9a1b0a2500>
 
   <p>Each plugin also exposes its raw constructor on a <code>Constructor</code> property: <code>$.fn.popover.Constructor</code>. If you'd like to get a particular plugin instance, retrieve it directly from an element: <code>$('[rel="popover"]').data('popover')</code>.</p>
 
   <h4>Default settings</h4>
   <p>You can change the default settings for a plugin by modifying the plugin's <code>Constructor.DEFAULTS</code> object:<p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc8fdd00>
+Liquid error: undefined method `join' for #<String:0x007f9a1b0a1d08>
 
   <h3 id="js-noconflict">No conflict</h3>
   <p>Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc8fd5a8>
+Liquid error: undefined method `join' for #<String:0x007f9a1b0a14e8>
 
   <h3 id="js-events">Events</h3>
   <p>Bootstrap provides custom events for most plugins' unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is triggered on the completion of an action.</p>
   <p>As of 3.0.0, all Bootstrap events are namespaced.</p>
   <p>All infinitive events provide <code>preventDefault</code> functionality. This provides the ability to stop the execution of an action before it starts.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc8fcdd8>
+Liquid error: undefined method `join' for #<String:0x007f9a1b0a0e08>
 
   <h3 id="js-disabled">No special fallbacks when JavaScript is disabled</h3>
   <p>Bootstrap's plugins don't fall back particularly gracefully when JavaScript is disabled. If you care about the user experience in this case, use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript"><code>&lt;noscript&gt;</code></a> to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.</p>
@@ -223,7 +223,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc8fcdd8>
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc8907f0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a9647e8>
 
   <h3>Live demo</h3>
   <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
@@ -273,7 +273,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc8907f0>
       Launch demo modal
     </button>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc890138>
+Liquid error: undefined method `join' for #<String:0x007f9a1a964068>
 
   <div class="bs-callout bs-callout-warning">
     <h4>Make modals accessible</h4>
@@ -292,7 +292,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc890138>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc88b5c0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a95f298>
 
   <!--  Modal content for the above example -->
   <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -326,7 +326,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc88b5c0>
 
   <h2 id="modals-remove-animation">Remove animation</h2>
   <p>For modals that simply appear rather than fade in to view, remove the <code>.fade</code> class from your modal markup.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc88a918>
+Liquid error: undefined method `join' for #<String:0x007f9a1a95ea00>
 
   <h2 id="modals-related-target">Varying modal content based on trigger button</h2>
   <p>Have a bunch of buttons that all trigger the same modal, just with slightly different contents? Use <code>event.relatedTarget</code> and <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes">HTML <code>data-*</code> attributes</a> (possibly <a href="http://api.jquery.com/data/">via jQuery</a>) to vary the contents of the modal depending on which button was clicked. See the Modal Events docs for details on <code>relatedTarget</code>,</p>
@@ -363,21 +363,21 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc88a918>
       </div>
     </div><!-- /.modal -->
   </div><!-- /.bs-example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc889400>
-Liquid error: undefined method `join' for #<String:0x007fc5fc888848>
+Liquid error: undefined method `join' for #<String:0x007f9a1a95d3d0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a95c8e0>
 
   <h2 id="modals-usage">Usage</h2>
   <p>The modal plugin toggles your hidden content on demand, via data attributes or JavaScript. It also adds <code>.modal-open</code> to the <code>&lt;body&gt;</code> to override default scrolling behavior and generates a <code>.modal-backdrop</code> to provide a click area for dismissing shown modals when clicking outside the modal.</p>
 
   <h3>Via data attributes</h3>
   <p>Activate a modal without writing JavaScript. Set <code>data-toggle="modal"</code> on a controller element, like a button, along with a <code>data-target="#foo"</code> or <code>href="#foo"</code> to target a specific modal to toggle.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc883550>
+Liquid error: undefined method `join' for #<String:0x007f9a1a956f80>
 
   <h3>Via JavaScript</h3>
   <p>Call a modal with id <code>myModal</code> with a single line of JavaScript:</p>
   Liquid error: undefined method `join' for "$('#myModal').modal(options)":String
 
-  <h3>Options</h3>
+  <h3 id="modals-options">Options</h3>
   <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-backdrop=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -415,14 +415,14 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc883550>
          <td>
           <p><strong class="text-danger">This option is deprecated since v3.3.0 and will be removed in v4.</strong> We recommend instead using client-side templating or a data binding framework, or calling <a href="http://api.jquery.com/load/">jQuery.load</a> yourself.</p>
           <p>If a remote URL is provided, <strong>content will be loaded one time</strong> via jQuery's <code>load</code> method and injected into the <code>.modal-content</code> div. If you're using the data-api, you may alternatively use the <code>href</code> attribute to specify the remote source. An example of this is shown below:</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc87abf8>
+Liquid error: undefined method `join' for #<String:0x007f9a1a94e308>
          </td>
        </tr>
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
 
-  <h3>Methods</h3>
+  <h3 id="modals-methods">Methods</h3>
 
   <h4>.modal(options)</h4>
   <p>Activates your content as a modal. Accepts an optional options <code>object</code>.</p>
@@ -440,7 +440,7 @@ Liquid error: undefined method `join' for "\n$('#myModal').modal({\n  keyboard: 
   <p>Manually hides a modal. <strong>Returns to the caller before the modal has actually been hidden</strong> (i.e. before the <code>hidden.bs.modal</code> event occurs).</p>
   Liquid error: undefined method `join' for "$('#myModal').modal('hide')":String
 
-  <h3>Events</h3>
+  <h3 id="modals-events">Events</h3>
   <p>Bootstrap's modal class exposes a few events for hooking into modal functionality.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -474,7 +474,7 @@ Liquid error: undefined method `join' for "\n$('#myModal').modal({\n  keyboard: 
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc869588>
+Liquid error: undefined method `join' for #<String:0x007f9a1a93cb08>
 </div>
 
 <div class="bs-docs-section">
@@ -499,7 +499,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc869588>
         <div class="collapse navbar-collapse bs-example-js-navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-              <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                 Dropdown
                 <span class="caret"></span>
               </a>
@@ -512,7 +512,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc869588>
               </ul>
             </li>
             <li class="dropdown">
-              <a id="drop2" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a id="drop2" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                 Dropdown
                 <span class="caret"></span>
               </a>
@@ -527,7 +527,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc869588>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li id="fat-menu" class="dropdown">
-              <a id="drop3" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a id="drop3" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                 Dropdown
                 <span class="caret"></span>
               </a>
@@ -550,7 +550,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc869588>
     <ul class="nav nav-pills" role="tablist">
       <li role="presentation" class="active"><a href="#">Regular link</a></li>
       <li role="presentation" class="dropdown">
-        <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
           Dropdown
           <span class="caret"></span>
         </a>
@@ -563,7 +563,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc869588>
         </ul>
       </li>
       <li role="presentation" class="dropdown">
-        <a id="drop5" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a id="drop5" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
           Dropdown
           <span class="caret"></span>
         </a>
@@ -576,7 +576,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc869588>
         </ul>
       </li>
       <li role="presentation" class="dropdown">
-        <a id="drop6" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a id="drop6" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
           Dropdown
           <span class="caret"></span>
         </a>
@@ -599,9 +599,9 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc869588>
 
   <h3>Via data attributes</h3>
   <p>Add <code>data-toggle="dropdown"</code> to a link or button to toggle a dropdown.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc849be8>
+Liquid error: undefined method `join' for #<String:0x007f9a1b099c70>
   <p>To keep URLs intact with link buttons, use the <code>data-target</code> attribute instead of <code>href="#"</code>.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc849350>
+Liquid error: undefined method `join' for #<String:0x007f9a1b099298>
 
   <h3>Via JavaScript</h3>
   <p>Call the dropdowns via JavaScript:</p>
@@ -611,14 +611,14 @@ Liquid error: undefined method `join' for "\n$('.dropdown-toggle').dropdown()\n"
     <p>Regardless of whether you call your dropdown via JavaScript or instead use the data-api, <code>data-toggle="dropdown"</code> is always required to be present on the dropdown's trigger element.</p>
   </div>
 
-  <h3>Options</h3>
+  <h3 id="dropdowns-options">Options</h3>
   <p><em>None</em></p>
 
-  <h3>Methods</h3>
+  <h3 id="dropdowns-methods">Methods</h3>
   <h4>$().dropdown('toggle')</h4>
   <p>Toggles the dropdown menu of a given navbar or tabbed navigation.</p>
 
-  <h3>Events</h3>
+  <h3 id="dropdowns-events">Events</h3>
   <p>All dropdown events are fired at the <code>.dropdown-menu</code>'s parent element.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -648,7 +648,7 @@ Liquid error: undefined method `join' for "\n$('.dropdown-toggle').dropdown()\n"
       </tbody>
     </table>
   </div><!-- ./bs-table-responsive -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc848540>
+Liquid error: undefined method `join' for #<String:0x007f9a1b098550>
 </div>
 
 <div class="bs-docs-section">
@@ -673,7 +673,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc848540>
             <li><a href="#fat">@fat</a></li>
             <li><a href="#mdo">@mdo</a></li>
             <li class="dropdown">
-              <a href="#" id="navbarDrop1" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+              <a href="#" id="navbarDrop1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDrop1">
                 <li><a href="#one" tabindex="-1">one</a></li>
                 <li><a href="#two" tabindex="-1">two</a></li>
@@ -708,19 +708,6 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc848540>
     <h4>Requires Bootstrap nav</h4>
     <p>Scrollspy currently requires the use of a <a href="../components/#nav">Bootstrap nav component</a> for proper highlighting of active links.</p>
   </div>
-
-  <h3>Requires relative positioning</h3>
-  <p>No matter the implementation method, scrollspy requires the use of <code>position: relative;</code> on the element you're spying on. In most cases this is the <code>&lt;body&gt;</code>.</p>
-
-  <h3>Via data attributes</h3>
-  <p>To easily add scrollspy behavior to your topbar navigation, add <code>data-spy="scroll"</code> to the element you want to spy on (most typically this would be the <code>&lt;body&gt;</code>). Then add the <code>data-target</code> attribute with the ID or class of the parent element of any Bootstrap <code>.nav</code> component.</p>
-Liquid error: undefined method `join' for "\nbody {\n  position: relative;\n}\n":String
-Liquid error: undefined method `join' for #<String:0x007fc5fc82b198>
-
-  <h3>Via JavaScript</h3>
-  <p>After adding <code>position: relative;</code> in your CSS, call the scrollspy via JavaScript:</p>
-Liquid error: undefined method `join' for "\n$('body').scrollspy({ target: '.navbar-example' })\n":String
-
   <div class="bs-callout bs-callout-danger">
     <h4>Resolvable ID targets required</h4>
     <p>Navbar links must have resolvable id targets. For example, a <code>&lt;a href="#home"&gt;home&lt;/a&gt;</code> must correspond to something in the DOM like <code>&lt;div id="home"&gt;&lt;/div&gt;</code>.</p>
@@ -730,13 +717,26 @@ Liquid error: undefined method `join' for "\n$('body').scrollspy({ target: '.nav
     <p>Target elements that are not <a href="http://api.jquery.com/visible-selector/"><code>:visible</code> according to jQuery</a> will be ignored and their corresponding nav items will never be highlighted.</p>
   </div>
 
-  <h3>Methods</h3>
+  <h3>Requires relative positioning</h3>
+  <p>No matter the implementation method, scrollspy requires the use of <code>position: relative;</code> on the element you're spying on. In most cases this is the <code>&lt;body&gt;</code>.</p>
+
+  <h3>Via data attributes</h3>
+  <p>To easily add scrollspy behavior to your topbar navigation, add <code>data-spy="scroll"</code> to the element you want to spy on (most typically this would be the <code>&lt;body&gt;</code>). Then add the <code>data-target</code> attribute with the ID or class of the parent element of any Bootstrap <code>.nav</code> component.</p>
+Liquid error: undefined method `join' for "\nbody {\n  position: relative;\n}\n":String
+Liquid error: undefined method `join' for #<String:0x007f9a1b077bc0>
+
+  <h3>Via JavaScript</h3>
+  <p>After adding <code>position: relative;</code> in your CSS, call the scrollspy via JavaScript:</p>
+Liquid error: undefined method `join' for "\n$('body').scrollspy({ target: '.navbar-example' })\n":String
+
+
+  <h3 id="scrollspy-methods">Methods</h3>
   <h4>.scrollspy('refresh')</h4>
   <p>When using scrollspy in conjunction with adding or removing of elements from the DOM, you'll need to call the refresh method like so:</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc82b148>
+Liquid error: undefined method `join' for #<String:0x007f9a1b077198>
 
 
-  <h3>Options</h3>
+  <h3 id="scrollspy-options">Options</h3>
   <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-offset=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -759,7 +759,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc82b148>
     </table>
   </div><!-- ./bs-table-responsive -->
 
-  <h3>Events</h3>
+  <h3 id="scrollspy-events">Events</h3>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
@@ -776,7 +776,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc82b148>
       </tbody>
     </table>
   </div><!-- ./bs-table-responsive -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc82ab58>
+Liquid error: undefined method `join' for #<String:0x007f9a1b076ba8>
 </div>
 
 <div class="bs-docs-section">
@@ -784,7 +784,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc82ab58>
 
   <h2 id="tabs-examples">Example tabs</h2>
   <p>Add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus.</p>
-  <div class="bs-example bs-example-tabs">
+  <div class="bs-example bs-example-tabs" role="tabpanel">
     <ul id="myTab" class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Home</a></li>
       <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Profile</a></li>
@@ -821,28 +821,28 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc82ab58>
   <h2 id="tabs-usage">Usage</h2>
   <p>Enable tabbable tabs via JavaScript (each tab needs to be activated individually):</p>
 
-Liquid error: undefined method `join' for #<String:0x007fc5fc80e958>
+Liquid error: undefined method `join' for #<String:0x007f9a1b046bb0>
 
   <p>You can activate individual tabs in several ways:</p>
 
-Liquid error: undefined method `join' for #<String:0x007fc5fc80de68>
+Liquid error: undefined method `join' for #<String:0x007f9a1b045f08>
 
   <h3>Markup</h3>
   <p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the Bootstrap <a href="../components/#nav-tabs">tab styling</a>, while adding the <code>nav</code> and <code>nav-pills</code> classes will apply <a href="../components/#nav-pills">pill styling</a>.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc80ce78>
+Liquid error: undefined method `join' for #<String:0x007f9a1b0450d0>
 
   <h3>Fade effect</h3>
   <p>To make tabs fade in, add <code>.fade</code> to each <code>.tab-pane</code>. The first tab pane must also have <code>.in</code> to properly fade in initial content.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc80c108>
+Liquid error: undefined method `join' for #<String:0x007f9a1b044270>
 
-  <h3>Methods</h3>
+  <h3 id="tabs-methods">Methods</h3>
   <h4>$().tab</h4>
   <p>
     Activates a tab element and content container. Tab should have either a <code>data-target</code> or an <code>href</code> targeting a container node in the DOM.
   </p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc806ff0>
+Liquid error: undefined method `join' for #<String:0x007f9a1c85f0d0>
 
-  <h3>Events</h3>
+  <h3 id="tabs-events">Events</h3>
   <p>When showing a new tab, the events fire in the following order:</p>
   <ol>
     <li><code>hide.bs.tab</code> (on the current active tab)</li>
@@ -879,7 +879,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc806ff0>
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc805e48>
+Liquid error: undefined method `join' for #<String:0x007f9a1c85dff0>
 </div>
 
 <div class="bs-docs-section">
@@ -932,13 +932,13 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc805e48>
       <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fd867318>
+Liquid error: undefined method `join' for #<String:0x007f9a1a926588>
 
   <div class="bs-callout bs-callout-danger">
     <h4>Opt-in functionality</h4>
     <p>For performance reasons, the Tooltip and Popover data-apis are opt-in, meaning <strong>you must initialize them yourself</strong>.</p>
     <p>One way to initialize all tooltips on a page would be to select them by their <code>data-toggle</code> attribute:</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fd865590>
+Liquid error: undefined method `join' for #<String:0x007f9a1a924940>
 
   </div>
   <div class="bs-callout bs-callout-warning">
@@ -965,9 +965,9 @@ Liquid error: undefined method `join' for "\n$('#example').tooltip(options)\n":S
     <h4>Multiple-line links</h4>
     <p>Sometimes you want to add a tooltip to a hyperlink that wraps multiple lines. The default behavior of the tooltip plugin is to center it horizontally and vertically. Add <code>white-space: nowrap;</code> to your anchors to avoid this.</p>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd85ded0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a91d370>
 
-  <h3>Options</h3>
+  <h3 id="tooltips-options">Options</h3>
   <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-animation=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -1067,7 +1067,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd85ded0>
     <p>Options for individual tooltips can alternatively be specified through the use of data attributes, as explained above.</p>
   </div>
 
-  <h3>Methods</h3>
+  <h3 id="tooltips-methods">Methods</h3>
 
   <h4>$().tooltip(options)</h4>
   <p>Attaches a tooltip handler to an element collection.</p>
@@ -1088,7 +1088,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd85ded0>
   <p>Hides and destroys an element's tooltip.</p>
   Liquid error: undefined method `join' for "$('#element').tooltip('destroy')":String
 
-  <h3>Events</h3>
+  <h3 id="tooltips-events">Events</h3>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
@@ -1117,13 +1117,12 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd85ded0>
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
-Liquid error: undefined method `join' for #<String:0x007fc5fd84ff38>
+Liquid error: undefined method `join' for #<String:0x007f9a1a90ff18>
 </div>
 
 <div class="bs-docs-section">
   <h1 id="popovers" class="page-header">Popovers <small>popover.js</small></h1>
 
-  <h2 id="popovers-examples">Examples</h2>
   <p>Add small overlays of content, like those on the iPad, to any element for housing secondary information.</p>
   <p>Popovers whose both title and content are zero-length are never displayed.</p>
 
@@ -1135,7 +1134,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd84ff38>
     <h4>Opt-in functionality</h4>
     <p>For performance reasons, the Tooltip and Popover data-apis are opt-in, meaning <strong>you must initialize them yourself</strong>.</p>
     <p>One way to initialize all popovers on a page would be to select them by their <code>data-toggle</code> attribute:</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fd844ea8>
+Liquid error: undefined method `join' for #<String:0x007f9a1a9046e0>
   </div>
   <div class="bs-callout bs-callout-warning">
     <h4>Popovers in button groups and input groups require special setting</h4>
@@ -1154,6 +1153,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd844ea8>
     <p>Sometimes you want to add a popover to a hyperlink that wraps multiple lines. The default behavior of the popover plugin is to center it horizontally and vertically. Add <code>white-space: nowrap;</code> to your anchors to avoid this.</p>
   </div>
 
+  <h2 id="popovers-examples">Examples</h2>
   <h3>Static popover</h3>
   <p>Four options are available: top, right, bottom, and left aligned.</p>
   <div class="bs-example bs-example-popover">
@@ -1197,7 +1197,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd844ea8>
   <div class="bs-example" style="padding-bottom: 24px;">
     <button type="button" class="btn btn-lg btn-danger bs-docs-popover" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd844340>
+Liquid error: undefined method `join' for #<String:0x007f9a1a9040a0>
 
   <h4>Four directions</h4>
   <div class="bs-example popover-demo">
@@ -1216,7 +1216,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd844340>
       </button>
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fd83f750>
+Liquid error: undefined method `join' for #<String:0x007f9a1a8ff410>
 
   <h4>Dismiss on next click</h4>
   <p>Use the <code>focus</code> trigger to dismiss popovers on the next click that the user makes.</p>
@@ -1227,14 +1227,14 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd83f750>
   <div class="bs-example" style="padding-bottom: 24px;">
     <a href="#" tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd83ef58>
+Liquid error: undefined method `join' for #<String:0x007f9a1a8feee8>
 
 
   <h2 id="popovers-usage">Usage</h2>
   <p>Enable popovers via JavaScript:</p>
   Liquid error: undefined method `join' for "$('#example').popover(options)":String
 
-  <h3>Options</h3>
+  <h3 id="popovers-options">Options</h3>
   <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-animation=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -1363,7 +1363,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd83ef58>
   <h4>.popover('destroy')</h4>
   <p>Hides and destroys an element's popover.</p>
   Liquid error: undefined method `join' for "$('#element').popover('destroy')":String
-  <h3>Events</h3>
+  <h3 id="popovers-events">Events</h3>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
@@ -1392,7 +1392,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd83ef58>
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
-Liquid error: undefined method `join' for #<String:0x007fc5fd837f28>
+Liquid error: undefined method `join' for #<String:0x007f9a1a8f61d0>
 </div>
 
 <div class="bs-docs-section">
@@ -1423,11 +1423,11 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd837f28>
 
   <p>Just add <code>data-dismiss="alert"</code> to your close button to automatically give an alert close functionality. Closing an alert removes it from the DOM.</p>
 
-Liquid error: undefined method `join' for #<String:0x007fc5fd82c718>
+Liquid error: undefined method `join' for #<String:0x007f9a1a81ff68>
 
   <p>To have your alerts use animation when closing, make sure they have the <code>.fade</code> and <code>.in</code> classes already applied to them.</p>
 
-  <h3>Methods</h3>
+  <h3 id="alerts-methods">Methods</h3>
 
   <h4>$().alert()</h4>
   <p>Makes an alert listen for click events on descendant elements which have the <code>data-dismiss="alert"</code> attribute. (Not necessary when using the data-api's auto-initialization.)</p>
@@ -1436,7 +1436,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd82c718>
   <p>Closes an alert by removing it from the DOM. If the <code>.fade</code> and <code>.in</code> classes are present on the element, the alert will fade out before it is removed.</p>
 
 
-  <h3>Events</h3>
+  <h3 id="alerts-events">Events</h3>
   <p>Bootstrap's alert plugin exposes a few events for hooking into alert functionality.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -1458,7 +1458,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd82c718>
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
-Liquid error: undefined method `join' for #<String:0x007fc5fd827d58>
+Liquid error: undefined method `join' for #<String:0x007f9a1a81fa18>
 </div>
 
 <div class="bs-docs-section">
@@ -1482,20 +1482,20 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd827d58>
       Loading state
     </button>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fd8141b8>
+Liquid error: undefined method `join' for #<String:0x007f9a1b064570>
 
   <h2 id="buttons-single-toggle">Single toggle</h2>
   <p>Add <code>data-toggle="button"</code> to activate toggling on a single button.</p>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Pre-toggled buttons need <code>.active</code> and <code>aria-pressed="true"</code></h4>
+    <p>For pre-toggled buttons, you must add the <code>.active</code> class and the <code>aria-pressed="true"</code> attribute to the <code>button</code> yourself.</p>
+  </div>
   <div class="bs-example">
     <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
       Single toggle
     </button>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fd807bc0>
-  <div class="bs-callout bs-callout-warning">
-    <h4>Pre-toggled buttons need <code>.active</code> and <code>aria-pressed="true"</code></h4>
-    <p>For pre-toggled buttons, you must add the <code>.active</code> class and the <code>aria-pressed="true"</code> attribute to the <code>button</code> yourself.</p>
-  </div>
+Liquid error: undefined method `join' for #<String:0x007f9a1b05f908>
 
   <h2 id="buttons-checkbox-radio">Checkbox / Radio</h2>
   <p>Add <code>data-toggle="buttons"</code> to a <code>.btn-group</code> containing checkbox or radio inputs to enable toggling in their respective styles.</p>
@@ -1520,7 +1520,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd807bc0>
       </label>
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fd807440>
+Liquid error: undefined method `join' for #<String:0x007f9a1b05f868>
 
   <div class="bs-example">
     <div class="btn-group" data-toggle="buttons">
@@ -1535,7 +1535,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd807440>
       </label>
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fd806f68>
+Liquid error: undefined method `join' for #<String:0x007f9a1b05f3e0>
 
   <h2 id="buttons-methods">Methods</h2>
 
@@ -1547,7 +1547,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd806f68>
 
   <h4>$().button(string)</h4>
   <p>Swaps text to any data defined text state.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fd8069a0>
+Liquid error: undefined method `join' for #<String:0x007f9a1b05edc8>
 </div>
 
 <div class="bs-docs-section">
@@ -1610,7 +1610,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd8069a0>
       </div>
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fb87a708>
+Liquid error: undefined method `join' for #<String:0x007f9a1b0240d8>
 
   <p>It's also possible to swap out <code>.panel-body</code>s with <code>.list-group</code>s.</p>
 
@@ -1635,7 +1635,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb87a708>
   </div>
 
   <p>You can also use the plugin without the accordion markup. Make a button toggle the expanding and collapsing of another element.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fb87b4f0>
+Liquid error: undefined method `join' for #<String:0x007f9a1b04fad0>
 
   <div class="bs-callout bs-callout-warning">
     <h4>Make expand/collapse controls accessible</h4>
@@ -1660,7 +1660,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb87b4f0>
   <p>Enable manually with:</p>
 Liquid error: undefined method `join' for "\n$('.collapse').collapse()\n":String
 
-  <h3>Options</h3>
+  <h3 id="collapse-options">Options</h3>
   <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-parent=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -1689,7 +1689,7 @@ Liquid error: undefined method `join' for "\n$('.collapse').collapse()\n":String
     </table>
   </div><!-- /.table-responsive -->
 
-  <h3>Methods</h3>
+  <h3 id="collapse-methods">Methods</h3>
 
   <h4>.collapse(options)</h4>
   <p>Activates your content as a collapsible element. Accepts an optional options <code>object</code>.
@@ -1704,7 +1704,7 @@ Liquid error: undefined method `join' for "\n$('#myCollapsible').collapse({\n  t
   <h4>.collapse('hide')</h4>
   <p>Hides a collapsible element.</p>
 
-  <h3>Events</h3>
+  <h3 id="collapse-events">Events</h3>
   <p>Bootstrap's collapse class exposes a few events for hooking into collapse functionality.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -1736,7 +1736,7 @@ Liquid error: undefined method `join' for "\n$('#myCollapsible').collapse({\n  t
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
-Liquid error: undefined method `join' for #<String:0x007fc5fb879a88>
+Liquid error: undefined method `join' for #<String:0x007f9a1b04dfa0>
 </div>
 
 <div class="bs-docs-section">
@@ -1764,20 +1764,30 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb879a88>
         </div>
       </div>
       <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
       <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc094510>
+Liquid error: undefined method `join' for #<String:0x007f9a1a8ad070>
+
+  <div class="bs-callout bs-callout-danger" id="callout-carousel-accessibility">
+    <h4>Accessibility issue</h4>
+    <p>The carousel component is generally not compliant with accessibility standards. If you need to be compliant, please consider other options for presenting your content.</p>
+  </div>
 
   <div class="bs-callout bs-callout-warning" id="callout-carousel-transitions">
     <h4>Transition animations not supported in Internet Explorer 8 &amp; 9</h4>
     <p>Bootstrap exclusively uses CSS3 for its animations, but Internet Explorer 8 &amp; 9 don't support the necessary CSS properties. Thus, there are no slide transition animations when using these browsers. We have intentionally decided not to include jQuery-based fallbacks for the transitions.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-warning" id="callout-carousel-active">
+    <h4>Initial active element required</h4>
+    <p>The <code>.active</code> class needs to be added to one of the slides. Otherwise, the carousel will not be visible.</p>
   </div>
 
   <h3>Optional captions</h3>
@@ -1813,21 +1823,16 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc094510>
         </div>
       </div>
       <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
       <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc08f060>
-
-  <div class="bs-callout bs-callout-danger">
-    <h4>Accessibility issue</h4>
-    <p>The carousel component is generally not compliant with accessibility standards. If you need to be compliant, please consider other options for presenting your content.</p>
-  </div>
+Liquid error: undefined method `join' for #<String:0x007f9a1a8a7760>
 
   <h2 id="carousel-usage">Usage</h2>
 
@@ -1842,7 +1847,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc08f060>
   <p>Call carousel manually with:</p>
 Liquid error: undefined method `join' for "\n$('.carousel').carousel()\n":String
 
-  <h3>Options</h3>
+  <h3 id="carousel-options">Options</h3>
   <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-interval=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -1883,7 +1888,7 @@ Liquid error: undefined method `join' for "\n$('.carousel').carousel()\n":String
     </table>
   </div><!-- /.table-responsive -->
 
-  <h3>Methods</h3>
+  <h3 id="carousel-methods">Methods</h3>
 
   <h4>.carousel(options)</h4>
   <p>Initializes the carousel with an optional options <code>object</code> and starts cycling through items.</p>
@@ -1905,7 +1910,7 @@ Liquid error: undefined method `join' for "\n$('.carousel').carousel({\n  interv
   <h4>.carousel('next')</h4>
   <p>Cycles to the next item.</p>
 
-  <h3>Events</h3>
+  <h3 id="carousel-events">Events</h3>
   <p>Bootstrap's carousel class exposes two events for hooking into carousel functionality.</p>
   <p>Both events have the following additional properties:</p>
   <ul>
@@ -1932,7 +1937,7 @@ Liquid error: undefined method `join' for "\n$('.carousel').carousel({\n  interv
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc08ccc0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a8a4ce0>
 </div>
 
 <div class="bs-docs-section">
@@ -1959,14 +1964,14 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc08ccc0>
   <h3>Via data attributes</h3>
   <p>To easily add affix behavior to any element, just add <code>data-spy="affix"</code> to the element you want to spy on. Use offsets to define when to toggle the pinning of an element.</p>
 
-Liquid error: undefined method `join' for #<String:0x007fc5fc07d9f0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a895a10>
 
   <h3>Via JavaScript</h3>
   <p>Call the affix plugin via JavaScript:</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a894f20>
 
 
-  <h3>Options</h3>
+  <h3 id="affix-options">Options</h3>
   <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-offset-top="200"</code>.</p>
 
   <div class="table-responsive">
@@ -1998,7 +2003,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
   </div><!-- /.table-responsive -->
 
 
-  <h3>Events</h3>
+  <h3 id="affix-events">Events</h3>
   <p>Bootstrap's affix plugin exposes a few events for hooking into affix functionality.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -2066,6 +2071,9 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
     <li><a href="#modals-remove-animation">Remove animation</a></li>
     <li><a href="#modals-related-target">Varying content based on trigger button</a></li>
     <li><a href="#modals-usage">Usage</a></li>
+    <li><a href="#modals-options">Options</a></li>
+    <li><a href="#modals-methods">Methods</a></li>
+    <li><a href="#modals-events">Events</a></li>
   </ul>
 </li>
 <li>
@@ -2073,6 +2081,8 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
   <ul class="nav">
     <li><a href="#dropdowns-examples">Examples</a></li>
     <li><a href="#dropdowns-usage">Usage</a></li>
+    <li><a href="#dropdowns-methods">Methods</a></li>
+    <li><a href="#dropdowns-events">Events</a></li>
   </ul>
 </li>
 <li>
@@ -2080,6 +2090,9 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
   <ul class="nav">
     <li><a href="#scrollspy-examples">Examples</a></li>
     <li><a href="#scrollspy-usage">Usage</a></li>
+    <li><a href="#scrollspy-methods">Methods</a></li>
+    <li><a href="#scrollspy-options">Options</a></li>
+    <li><a href="#scrollspy-events">Events</a></li>
   </ul>
 </li>
 <li>
@@ -2087,6 +2100,8 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
   <ul class="nav">
     <li><a href="#tabs-examples">Examples</a></li>
     <li><a href="#tabs-usage">Usage</a></li>
+    <li><a href="#tabs-methods">Methods</a></li>
+    <li><a href="#tabs-events">Events</a></li>
   </ul>
 </li>
 <li>
@@ -2094,6 +2109,9 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
   <ul class="nav">
     <li><a href="#tooltips-examples">Examples</a></li>
     <li><a href="#tooltips-usage">Usage</a></li>
+    <li><a href="#tooltips-options">Options</a></li>
+    <li><a href="#tooltips-methods">Methods</a></li>
+    <li><a href="#tooltips-events">Events</a></li>
   </ul>
 </li>
 <li>
@@ -2101,6 +2119,8 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
   <ul class="nav">
     <li><a href="#popovers-examples">Examples</a></li>
     <li><a href="#popovers-usage">Usage</a></li>
+    <li><a href="#popovers-options">Options</a></li>
+    <li><a href="#popovers-events">Events</a></li>
   </ul>
 </li>
 <li>
@@ -2108,6 +2128,8 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
   <ul class="nav">
     <li><a href="#alerts-examples">Examples</a></li>
     <li><a href="#alerts-usage">Usage</a></li>
+    <li><a href="#alerts-methods">Methods</a></li>
+    <li><a href="#alerts-events">Events</a></li>
   </ul>
 </li>
 <li>
@@ -2124,6 +2146,9 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
   <ul class="nav">
     <li><a href="#collapse-examples">Examples</a></li>
     <li><a href="#collapse-usage">Usage</a></li>
+    <li><a href="#collapse-options">Options</a></li>
+    <li><a href="#collapse-methods">Methods</a></li>
+    <li><a href="#collapse-events">Events</a></li>
   </ul>
 </li>
 <li>
@@ -2131,6 +2156,9 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
   <ul class="nav">
     <li><a href="#carousel-examples">Examples</a></li>
     <li><a href="#carousel-usage">Usage</a></li>
+    <li><a href="#carousel-options">Options</a></li>
+    <li><a href="#carousel-methods">Methods</a></li>
+    <li><a href="#carousel-events">Events</a></li>
   </ul>
 </li>
 <li>
@@ -2138,6 +2166,8 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07ceb0>
   <ul class="nav">
     <li><a href="#affix-examples">Examples</a></li>
     <li><a href="#affix-usage">Usage</a></li>
+    <li><a href="#affix-options">Options</a></li>
+    <li><a href="#affix-events">Events</a></li>
   </ul>
 </li>
 

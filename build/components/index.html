@@ -142,7 +142,13 @@
     </ul>
     <p>Use whatever option best suits your specific development setup.</p>
   </div>
-Liquid error: undefined method `join' for "\n<span class=\"glyphicon glyphicon-search\"></span>\n":String
+  <div class="bs-callout bs-callout-warning">
+    <h4>Accessible icons</h4>
+    <p>Modern versions of assistive technologies will announce CSS generated content, as well as specific Unicode characters. To avoid unintended and confusing output in screen readers (particularly when icons are used purely for decoration), we hide them with the <code>aria-hidden="true"</code> attribute.</p>
+    <p>If you're using an icon to convey meaning (rather than only as a decorative element), ensure that this meaning is also conveyed to assistive technologies – for instance, include additional content, visually hidden with the <code>.sr-only</code> class.</p>
+    <p>If you're creating controls with no other text (such as a <code>&lt;button&gt;</code> that only contains an icon), you should always provide alternative content to identify the purpose of the control, so that it will make sense to users of assistive technologies. In this case, you could add an <code>aria-label</code> attribute on the control itself.</p>
+  </div>
+Liquid error: undefined method `join' for #<String:0x007f9a1c8e75c0>
 
 
   <h2 id="glyphicons-examples">Examples</h2>
@@ -150,20 +156,29 @@ Liquid error: undefined method `join' for "\n<span class=\"glyphicon glyphicon-s
   <div class="bs-example">
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group">
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span> <span class="sr-only">Left Align</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span> <span class="sr-only">Center Align</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span> <span class="sr-only">Right Align</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify"></span> <span class="sr-only">Justify</span></button>
+        <button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></button>
+        <button type="button" class="btn btn-default" aria-label="Center Align"><span class="glyphicon glyphicon-align-center" aria-hidden="true"></span></button>
+        <button type="button" class="btn btn-default" aria-label="Right Align"><span class="glyphicon glyphicon-align-right" aria-hidden="true"></span></button>
+        <button type="button" class="btn btn-default" aria-label="Justify"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></button>
       </div>
     </div>
     <div class="btn-toolbar" role="toolbar">
-      <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star"></span> Star</button>
-      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-star"></span> Star</button>
-      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-star"></span> Star</button>
-      <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-star"></span> Star</button>
+      <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button>
+      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button>
+      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button>
+      <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc9b3560>
+Liquid error: undefined method `join' for #<String:0x007f9a1c8e7200>
+  <p>An icon used in an <a href="#alerts">alert</a> to convey that it's an error message, with additional <code>.sr-only</code> text to convey this hint to users of assistive technologies.</p>
+  <div class="bs-example">
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      Enter a valid email address
+    </div>
+  </div>
+Liquid error: undefined method `join' for #<String:0x007f9a1c8e6ee0>
 </div>
 
 <div class="bs-docs-section">
@@ -175,7 +190,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc9b3560>
   <p>Wrap the dropdown's trigger and the dropdown menu within <code>.dropdown</code>, or another element that declares <code>position: relative;</code>. Then add the menu's HTML.</p>
   <div class="bs-example">
     <div class="dropdown clearfix">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
         Dropdown
         <span class="caret"></span>
       </button>
@@ -187,7 +202,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc9b3560>
       </ul>
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc9ab6d0>
+Liquid error: undefined method `join' for #<String:0x007f9a1c8dea60>
 
   <h3 id="dropdowns-alignment">Alignment</h3>
   <p>By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Add <code>.dropdown-menu-right</code> to a <code>.dropdown-menu</code> to right align the dropdown menu.</p>
@@ -199,13 +214,13 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc9ab6d0>
     <h4>Deprecated <code>.pull-right</code> alignment</h4>
     <p>As of v3.1.0, we've deprecated <code>.pull-right</code> on dropdown menus. To right-align a menu, use <code>.dropdown-menu-right</code>. Right-aligned nav components in the navbar use a mixin version of this class to automatically align the menu. To override it, use <code>.dropdown-menu-left</code>.</p>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc9ab130>
+Liquid error: undefined method `join' for #<String:0x007f9a1c8de150>
 
   <h3 id="dropdowns-headers">Headers</h3>
   <p>Add a header to label sections of actions in any dropdown menu.</p>
   <div class="bs-example">
     <div class="dropdown clearfix">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
         Dropdown
         <span class="caret"></span>
       </button>
@@ -219,13 +234,13 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc9ab130>
       </ul>
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc9aaa50>
+Liquid error: undefined method `join' for #<String:0x007f9a1c8dd818>
 
   <h3 id="dropdowns-divider">Divider</h3>
   <p>Add a divider to separate series of links in a dropdown menu.</p>
   <div class="bs-example">
     <div class="dropdown clearfix">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-expanded="true">
         Dropdown
         <span class="caret"></span>
       </button>
@@ -238,13 +253,13 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc9aaa50>
       </ul>
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc9aa168>
+Liquid error: undefined method `join' for #<String:0x007f9a1c8dcf58>
 
   <h3 id="dropdowns-disabled">Disabled menu items</h3>
   <p>Add <code>.disabled</code> to a <code>&lt;li&gt;</code> in the dropdown to disable the link.</p>
   <div class="bs-example">
     <div class="dropdown clearfix">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">
         Dropdown
         <span class="caret"></span>
       </button>
@@ -255,7 +270,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc9aa168>
       </ul>
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc9a9808>
+Liquid error: undefined method `join' for #<String:0x007f9a1c8dc6c0>
 </div>
 
 <div class="bs-docs-section">
@@ -268,82 +283,84 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc9a9808>
     <p>When using tooltips or popovers on elements within a <code>.btn-group</code>, you'll have to specify the option <code>container: 'body'</code> to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the tooltip or popover is triggered).</p>
   </div>
 
+  <div class="bs-callout bs-callout-warning">
+    <h4>Ensure correct <code>role</code> and provide a label</h4>
+    <p>In order for assistive technologies – such as screen readers – to convey that a series of buttons is grouped, an appropriate <code>role</code> attribute needs to be provided. For button groups, this would be <code>role="group"</code>, while toolbars should have a <code>role="toolbar"</code>.</p>
+    <p>One exception are groups which only contain a single control (for instance the <a href="#btn-groups-justified">justified button groups</a> with <code>&lt;button&gt;</code> elements) or a dropdown.</p>
+    <p>In addition, groups and toolbars should be given an explicit label, as most assistive technologies will otherwise not announce them, despite the presence of the correct <code>role</code> attribute. In the examples provided here, we use <code>aria-label</code>, but alternatives such as <code>aria-labelledby</code> can also be used.</p>
+  </div>
+
   <h3 id="btn-groups-single">Basic example</h3>
   <p>Wrap a series of buttons with <code>.btn</code> in <code>.btn-group</code>.</p>
   <div class="bs-example">
-    <div class="btn-group" style="margin: 9px 0 5px;">
+    <div class="btn-group" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-default">Left</button>
       <button type="button" class="btn btn-default">Middle</button>
       <button type="button" class="btn btn-default">Right</button>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc026f10>
+Liquid error: undefined method `join' for #<String:0x007f9a1a83f250>
 
   <h3 id="btn-groups-toolbar">Button toolbar</h3>
   <p>Combine sets of <code>&lt;div class="btn-group"&gt;</code> into a <code>&lt;div class="btn-toolbar"&gt;</code> for more complex components.</p>
   <div class="bs-example">
-    <div class="btn-toolbar" role="toolbar" style="margin: 0;">
-      <div class="btn-group">
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="btn-group" role="group" aria-label="First group">
         <button type="button" class="btn btn-default">1</button>
         <button type="button" class="btn btn-default">2</button>
         <button type="button" class="btn btn-default">3</button>
         <button type="button" class="btn btn-default">4</button>
       </div>
-      <div class="btn-group">
+      <div class="btn-group" role="group" aria-label="Second group">
         <button type="button" class="btn btn-default">5</button>
         <button type="button" class="btn btn-default">6</button>
         <button type="button" class="btn btn-default">7</button>
       </div>
-      <div class="btn-group">
+      <div class="btn-group" role="group" aria-label="Third group">
         <button type="button" class="btn btn-default">8</button>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc026858>
+Liquid error: undefined method `join' for #<String:0x007f9a1a83e9e0>
 
   <h3 id="btn-groups-sizing">Sizing</h3>
   <p>Instead of applying button sizing classes to every button in a group, just add <code>.btn-group-*</code> to the <code>.btn-group</code>.</p>
   <div class="bs-example">
-    <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group btn-group-lg">
-        <button type="button" class="btn btn-default">Left</button>
-        <button type="button" class="btn btn-default">Middle</button>
-        <button type="button" class="btn btn-default">Right</button>
-      </div>
+    <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+      <button type="button" class="btn btn-default">Left</button>
+      <button type="button" class="btn btn-default">Middle</button>
+      <button type="button" class="btn btn-default">Right</button>
     </div>
-    <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group">
-        <button type="button" class="btn btn-default">Left</button>
-        <button type="button" class="btn btn-default">Middle</button>
-        <button type="button" class="btn btn-default">Right</button>
-      </div>
+    <br>
+    <div class="btn-group" role="group" aria-label="Default button group">
+      <button type="button" class="btn btn-default">Left</button>
+      <button type="button" class="btn btn-default">Middle</button>
+      <button type="button" class="btn btn-default">Right</button>
     </div>
-    <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group btn-group-sm">
-        <button type="button" class="btn btn-default">Left</button>
-        <button type="button" class="btn btn-default">Middle</button>
-        <button type="button" class="btn btn-default">Right</button>
-      </div>
+    <br>
+    <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+      <button type="button" class="btn btn-default">Left</button>
+      <button type="button" class="btn btn-default">Middle</button>
+      <button type="button" class="btn btn-default">Right</button>
     </div>
-    <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group btn-group-xs">
-        <button type="button" class="btn btn-default">Left</button>
-        <button type="button" class="btn btn-default">Middle</button>
-        <button type="button" class="btn btn-default">Right</button>
-      </div>
+    <br>
+    <div class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
+      <button type="button" class="btn btn-default">Left</button>
+      <button type="button" class="btn btn-default">Middle</button>
+      <button type="button" class="btn btn-default">Right</button>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc025c50>
+Liquid error: undefined method `join' for #<String:0x007f9a1a83e3f0>
 
   <h3 id="btn-groups-nested">Nesting</h3>
   <p>Place a <code>.btn-group</code> within another <code>.btn-group</code> when you want dropdown menus mixed with a series of buttons.</p>
   <div class="bs-example">
-    <div class="btn-group">
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
       <button type="button" class="btn btn-default">1</button>
       <button type="button" class="btn btn-default">2</button>
 
-      <div class="btn-group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           Dropdown
           <span class="caret"></span>
         </button>
@@ -354,16 +371,16 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc025c50>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc0248a0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a83cf50>
 
   <h3 id="btn-groups-vertical">Vertical variation</h3>
   <p>Make a set of buttons appear vertically stacked rather than horizontally. <strong class="text-danger">Split button dropdowns are not supported here.</strong></p>
   <div class="bs-example">
-    <div class="btn-group-vertical">
+    <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
       <button type="button" class="btn btn-default">Button</button>
       <button type="button" class="btn btn-default">Button</button>
-      <div class="btn-group">
-        <button id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           Dropdown
           <span class="caret"></span>
         </button>
@@ -374,8 +391,8 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc0248a0>
       </div>
       <button type="button" class="btn btn-default">Button</button>
       <button type="button" class="btn btn-default">Button</button>
-      <div class="btn-group">
-        <button id="btnGroupVerticalDrop2" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupVerticalDrop2" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           Dropdown
           <span class="caret"></span>
         </button>
@@ -384,8 +401,8 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc0248a0>
           <li><a href="#">Dropdown link</a></li>
         </ul>
       </div>
-      <div class="btn-group">
-        <button id="btnGroupVerticalDrop3" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupVerticalDrop3" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           Dropdown
           <span class="caret"></span>
         </button>
@@ -394,8 +411,8 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc0248a0>
           <li><a href="#">Dropdown link</a></li>
         </ul>
       </div>
-      <div class="btn-group">
-        <button id="btnGroupVerticalDrop4" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupVerticalDrop4" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           Dropdown
           <span class="caret"></span>
         </button>
@@ -406,7 +423,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc0248a0>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for "\n<div class=\"btn-group-vertical\">\n  ...\n</div>\n":String
+Liquid error: undefined method `join' for #<String:0x007f9a1a8476f8>
 
   <h3 id="btn-groups-justified">Justified button groups</h3>
   <p>Make a group of buttons stretch at equal sizes to span the entire width of its parent. Also works with button dropdowns within the button group.</p>
@@ -424,17 +441,17 @@ Liquid error: undefined method `join' for "\n<div class=\"btn-group-vertical\">\
   <h4>With <code>&lt;a&gt;</code> elements</h4>
   <p>Just wrap a series of <code>.btn</code>s in <code>.btn-group.btn-group-justified</code>.</p>
   <div class="bs-example">
-    <div class="btn-group btn-group-justified">
+    <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
       <a href="#" class="btn btn-default" role="button">Left</a>
       <a href="#" class="btn btn-default" role="button">Middle</a>
       <a href="#" class="btn btn-default" role="button">Right</a>
     </div>
     <br>
-    <div class="btn-group btn-group-justified">
+    <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group with nested dropdown">
       <a href="#" class="btn btn-default" role="button">Left</a>
       <a href="#" class="btn btn-default" role="button">Middle</a>
-      <div class="btn-group">
-        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
           Dropdown <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
@@ -447,24 +464,29 @@ Liquid error: undefined method `join' for "\n<div class=\"btn-group-vertical\">\
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc02f8b8>
+Liquid error: undefined method `join' for #<String:0x007f9a1a847630>
+
+  <div class="bs-callout bs-callout-warning">
+  <h4>Links acting as buttons</h4>
+  <p>If the <code>&lt;a&gt;</code> elements are used to act as buttons – triggering in-page functionality, rather than navigating to another document or section within the current page – they should also be given an appropriate <code>role="button"</code>.</p>
+  </div>
 
   <h4>With <code>&lt;button&gt;</code> elements</h4>
-  <p>To use justified button groups with <code>&lt;button&gt;</code> elements, <strong class="text-danger">you must wrap each button in a button group</strong>. Most browsers don't properly apply our CSS for justification to <code>&lt;button&gt;</code> elements, but since we support button dropdowns, we can workaround that.</p>
+  <p>To use justified button groups with <code>&lt;button&gt;</code> elements, <strong class="text-danger">you must wrap each button in a button group</strong>. Most browsers don't properly apply our CSS for justification to <code>&lt;button&gt;</code> elements, but since we support button dropdowns, we can work around that.</p>
   <div class="bs-example">
-    <div class="btn-group btn-group-justified">
-      <div class="btn-group">
+    <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+      <div class="btn-group" role="group">
         <button type="button" class="btn btn-default">Left</button>
       </div>
-      <div class="btn-group">
+      <div class="btn-group" role="group">
         <button type="button" class="btn btn-default">Middle</button>
       </div>
-      <div class="btn-group">
+      <div class="btn-group" role="group">
         <button type="button" class="btn btn-default">Right</button>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc02f098>
+Liquid error: undefined method `join' for #<String:0x007f9a1a847040>
 </div>
 
 <div class="bs-docs-section">
@@ -481,7 +503,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc02f098>
   <p>Turn a button into a dropdown toggle with some basic markup changes.</p>
   <div class="bs-example">
     <div class="btn-group">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Default <span class="caret"></span></button>
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Default <span class="caret"></span></button>
       <ul class="dropdown-menu" role="menu">
         <li><a href="#">Action</a></li>
         <li><a href="#">Another action</a></li>
@@ -491,7 +513,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc02f098>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Primary <span class="caret"></span></button>
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Primary <span class="caret"></span></button>
       <ul class="dropdown-menu" role="menu">
         <li><a href="#">Action</a></li>
         <li><a href="#">Another action</a></li>
@@ -501,7 +523,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc02f098>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
-      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Success <span class="caret"></span></button>
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Success <span class="caret"></span></button>
       <ul class="dropdown-menu" role="menu">
         <li><a href="#">Action</a></li>
         <li><a href="#">Another action</a></li>
@@ -511,7 +533,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc02f098>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
-      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Info <span class="caret"></span></button>
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Info <span class="caret"></span></button>
       <ul class="dropdown-menu" role="menu">
         <li><a href="#">Action</a></li>
         <li><a href="#">Another action</a></li>
@@ -521,7 +543,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc02f098>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
-      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Warning <span class="caret"></span></button>
+      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Warning <span class="caret"></span></button>
       <ul class="dropdown-menu" role="menu">
         <li><a href="#">Action</a></li>
         <li><a href="#">Another action</a></li>
@@ -531,7 +553,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc02f098>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
-      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Danger <span class="caret"></span></button>
+      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Danger <span class="caret"></span></button>
       <ul class="dropdown-menu" role="menu">
         <li><a href="#">Action</a></li>
         <li><a href="#">Another action</a></li>
@@ -541,14 +563,14 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc02f098>
       </ul>
     </div><!-- /btn-group -->
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc03f4c0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a857418>
 
   <h3 id="btn-dropdowns-split">Split button dropdowns</h3>
   <p>Similarly, create split button dropdowns with the same markup changes, only with a separate button.</p>
   <div class="bs-example">
     <div class="btn-group">
       <button type="button" class="btn btn-default">Default</button>
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Toggle Dropdown</span>
       </button>
@@ -562,7 +584,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03f4c0>
     </div><!-- /btn-group -->
     <div class="btn-group">
       <button type="button" class="btn btn-primary">Primary</button>
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Toggle Dropdown</span>
       </button>
@@ -576,7 +598,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03f4c0>
     </div><!-- /btn-group -->
     <div class="btn-group">
       <button type="button" class="btn btn-success">Success</button>
-      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Toggle Dropdown</span>
       </button>
@@ -590,7 +612,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03f4c0>
     </div><!-- /btn-group -->
     <div class="btn-group">
       <button type="button" class="btn btn-info">Info</button>
-      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Toggle Dropdown</span>
       </button>
@@ -604,7 +626,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03f4c0>
     </div><!-- /btn-group -->
     <div class="btn-group">
       <button type="button" class="btn btn-warning">Warning</button>
-      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Toggle Dropdown</span>
       </button>
@@ -618,7 +640,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03f4c0>
     </div><!-- /btn-group -->
     <div class="btn-group">
       <button type="button" class="btn btn-danger">Danger</button>
-      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Toggle Dropdown</span>
       </button>
@@ -631,14 +653,14 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03f4c0>
       </ul>
     </div><!-- /btn-group -->
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc03e340>
+Liquid error: undefined method `join' for #<String:0x007f9a1a855d48>
 
   <h3 id="btn-dropdowns-sizing">Sizing</h3>
   <p>Button dropdowns work with buttons of all sizes.</p>
   <div class="bs-example">
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group">
-        <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+        <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
           Large button <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
@@ -652,7 +674,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03e340>
     </div><!-- /btn-toolbar -->
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group">
-        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
           Small button <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
@@ -666,7 +688,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03e340>
     </div><!-- /btn-toolbar -->
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group">
-        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
           Extra small button <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
@@ -679,7 +701,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03e340>
       </div><!-- /btn-group -->
     </div><!-- /btn-toolbar -->
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc03d210>
+Liquid error: undefined method `join' for #<String:0x007f9a1a855190>
 
   <h3 id="btn-dropdowns-dropup">Dropup variation</h3>
   <p>Trigger dropdown menus above elements by adding <code>.dropup</code> to the parent.</p>
@@ -687,7 +709,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03d210>
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group dropup">
         <button type="button" class="btn btn-default">Dropup</button>
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           <span class="caret"></span>
           <span class="sr-only">Toggle Dropdown</span>
         </button>
@@ -701,7 +723,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03d210>
       </div><!-- /btn-group -->
       <div class="btn-group dropup">
         <button type="button" class="btn btn-primary">Right dropup</button>
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           <span class="caret"></span>
           <span class="sr-only">Toggle Dropdown</span>
         </button>
@@ -715,7 +737,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03d210>
       </div><!-- /btn-group -->
     </div>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc03ca90>
+Liquid error: undefined method `join' for #<String:0x007f9a1a854a60>
 </div>
 
 <div class="bs-docs-section">
@@ -759,7 +781,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc03ca90>
       <span class="input-group-addon">.00</span>
     </div>
   </form>
-Liquid error: undefined method `join' for #<String:0x007fc5fc0574a8>
+Liquid error: undefined method `join' for #<String:0x007f9a1a86f5b8>
 
   <h2 id="input-groups-sizing">Sizing</h2>
   <p>Add the relative form sizing classes to the <code>.input-group</code> itself and contents within will automatically resize—no need for repeating the form control size classes on each element.</p>
@@ -779,7 +801,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc0574a8>
       <input type="text" class="form-control" placeholder="Username">
     </div>
   </form>
-Liquid error: undefined method `join' for #<String:0x007fc5fc056df0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a86efa0>
 
 
   <h2 id="input-groups-checkboxes-radios">Checkboxes and radio addons</h2>
@@ -804,7 +826,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc056df0>
       </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
   </form>
-Liquid error: undefined method `join' for #<String:0x007fc5fc056738>
+Liquid error: undefined method `join' for #<String:0x007f9a1a86e820>
 
 
   <h2 id="input-groups-buttons">Button addons</h2>
@@ -829,7 +851,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc056738>
       </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
   </form>
-Liquid error: undefined method `join' for #<String:0x007fc5fc056210>
+Liquid error: undefined method `join' for #<String:0x007f9a1a86db28>
 
   <h2 id="input-groups-buttons-dropdowns">Buttons with dropdowns</h2>
   <p></p>
@@ -838,7 +860,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc056210>
       <div class="col-lg-6">
         <div class="input-group">
           <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
@@ -854,7 +876,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc056210>
         <div class="input-group">
           <input type="text" class="form-control">
           <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
@@ -867,7 +889,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc056210>
       </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
   </form>
-Liquid error: undefined method `join' for #<String:0x007fc5fc055b58>
+Liquid error: undefined method `join' for #<String:0x007f9a1a86d6c8>
 
   <h2 id="input-groups-buttons-segmented">Segmented buttons</h2>
   <form class="bs-example bs-example-form" role="form">
@@ -876,7 +898,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc055b58>
         <div class="input-group">
           <div class="input-group-btn">
             <button type="button" class="btn btn-default" tabindex="-1">Action</button>
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
               <span class="caret"></span>
               <span class="sr-only">Toggle Dropdown</span>
             </button>
@@ -896,7 +918,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc055b58>
           <input type="text" class="form-control">
           <div class="input-group-btn">
             <button type="button" class="btn btn-default" tabindex="-1">Action</button>
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
               <span class="caret"></span>
               <span class="sr-only">Toggle Dropdown</span>
             </button>
@@ -912,7 +934,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc055b58>
       </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
   </form>
-Liquid error: undefined method `join' for #<String:0x007fc5fc054e60>
+Liquid error: undefined method `join' for #<String:0x007f9a1a86d088>
 </div>
 
 <div class="bs-docs-section">
@@ -920,40 +942,47 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc054e60>
 
   <p class="lead">Navs available in Bootstrap have shared markup, starting with the base <code>.nav</code> class, as well as shared states. Swap modifier classes to switch between each style.</p>
 
+  <div class="bs-callout bs-callout-info">
+    <h4>Using navs for tab panels requires JavaScript tabs plugin</h4>
+    <p>For tabs with tabbable areas, you must use the <a href="../javascript/#tabs">tabs JavaScript plugin</a>. The markup will also require additional <code>role</code> and ARIA attributes – see the plugin's <a href="../javascript/#tabs-usage">example markup</a> for further details.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Make navs used as navigation accessible</h4>
+    <p>If you are using navs to provide a navigation bar, be sure to add a <code>role="navigation"</code> to the most logical parent container of the <code>&lt;ul&gt;</code>, or wrap a <code>&lt;nav&gt;</code> element around the whole navigation. Do not add the role to the <code>&lt;ul&gt;</code> itself, as this would prevent it from being announced as an actual list by assistive technologies.</p>
+  </div>
+
   <h2 id="nav-tabs">Tabs</h2>
   <p>Note the <code>.nav-tabs</code> class requires the <code>.nav</code> base class.</p>
   <div class="bs-example">
-    <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="#">Home</a></li>
       <li role="presentation"><a href="#">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc07fb10>
-  <div class="bs-callout bs-callout-info">
-    <h4>Requires JavaScript tabs plugin</h4>
-    <p>For tabs with tabbable areas, you must use the <a href="../javascript/#tabs">tabs JavaScript plugin</a>.</p>
-  </div>
+Liquid error: undefined method `join' for #<String:0x007f9a1a897950>
+
 
   <h2 id="nav-pills">Pills</h2>
   <p>Take that same HTML, but use <code>.nav-pills</code> instead:</p>
   <div class="bs-example">
-    <ul class="nav nav-pills" role="tablist">
+    <ul class="nav nav-pills">
       <li role="presentation" class="active"><a href="#">Home</a></li>
       <li role="presentation"><a href="#">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc07f250>
+Liquid error: undefined method `join' for #<String:0x007f9a1a897428>
   <p>Pills are also vertically stackable. Just add <code>.nav-stacked</code>.</p>
   <div class="bs-example">
-    <ul class="nav nav-pills nav-stacked" role="tablist" style="max-width: 300px;">
+    <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
       <li role="presentation" class="active"><a href="#">Home</a></li>
       <li role="presentation"><a href="#">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc07e6e8>
+Liquid error: undefined method `join' for "\n<ul class=\"nav nav-pills nav-stacked\">\n  ...\n</ul>\n":String
 
 
   <h2 id="nav-justified">Justified</h2>
@@ -964,19 +993,19 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07e6e8>
     <p>As of v8.0, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing. This bug is also shown in the <a href="../examples/justified-nav/">justified nav example</a>.</p>
   </div>
   <div class="bs-example">
-    <ul class="nav nav-tabs nav-justified" role="tablist">
+    <ul class="nav nav-tabs nav-justified">
       <li role="presentation" class="active"><a href="#">Home</a></li>
       <li role="presentation"><a href="#">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>
     <br>
-    <ul class="nav nav-pills nav-justified" role="tablist">
+    <ul class="nav nav-pills nav-justified">
       <li role="presentation" class="active"><a href="#">Home</a></li>
       <li role="presentation"><a href="#">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc07de28>
+Liquid error: undefined method `join' for #<String:0x007f9a1a896528>
 
 
   <h2 id="nav-disabled-links">Disabled links</h2>
@@ -988,13 +1017,13 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07de28>
   </div>
 
   <div class="bs-example">
-    <ul class="nav nav-pills" role="tablist">
+    <ul class="nav nav-pills">
       <li role="presentation"><a href="#">Clickable link</a></li>
       <li role="presentation"><a href="#">Clickable link</a></li>
       <li role="presentation" class="disabled"><a href="#">Disabled link</a></li>
     </ul>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc07d4a0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a895d80>
 
 
   <h2 id="nav-dropdowns">Using dropdowns</h2>
@@ -1002,11 +1031,11 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07d4a0>
 
   <h3>Tabs with dropdowns</h3>
   <div class="bs-example">
-    <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="#">Home</a></li>
       <li role="presentation"><a href="#">Help</a></li>
       <li role="presentation" class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
           Dropdown <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
@@ -1019,15 +1048,15 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07d4a0>
       </li>
     </ul>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc07c5c8>
+Liquid error: undefined method `join' for #<String:0x007f9a1a8952e0>
 
   <h3>Pills with dropdowns</h3>
   <div class="bs-example">
-    <ul class="nav nav-pills" role="tablist">
+    <ul class="nav nav-pills">
       <li role="presentation" class="active"><a href="#">Home</a></li>
       <li role="presentation"><a href="#">Help</a></li>
       <li role="presentation" class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
           Dropdown <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
@@ -1040,7 +1069,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc07c5c8>
       </li>
     </ul>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc084c50>
+Liquid error: undefined method `join' for #<String:0x007f9a1a894930>
 </div>
 
 <div class="bs-docs-section">
@@ -1060,12 +1089,17 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc084c50>
     </ol>
   </div>
   <div class="bs-callout bs-callout-danger">
-    <h4>Requires JavaScript</h4>
+    <h4>Requires JavaScript plugin</h4>
     <p>If JavaScript is disabled and the viewport is narrow enough that the navbar collapses, it will be impossible to expand the navbar and view the content within the <code>.navbar-collapse</code>.</p>
+    <p>The responsive navbar requires the <a href="../javascript/#collapse">collapse plugin</a> to be included in your version of Bootstrap.</p>
   </div>
   <div class="bs-callout bs-callout-info">
     <h4>Changing the collapsed mobile navbar breakpoint</h4>
     <p>The navbar collapses into its vertical mobile view when the viewport is narrower than <code>@grid-float-breakpoint</code>, and expands into its horizontal non-mobile view when the viewport is at least <code>@grid-float-breakpoint</code> in width. Adjust this variable in the Less source to control when the navbar collapses/expands. The default value is <code>768px</code> (the smallest "small" or "tablet" screen).</p>
+  </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Make navbars accessible</h4>
+    <p>Be sure to add a <code>role="navigation"</code> to every navbar to help with accessibility.</p>
   </div>
 
   <div class="bs-example">
@@ -1085,10 +1119,10 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc084c50>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link</a></li>
+            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Link</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
@@ -1109,7 +1143,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc084c50>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Link</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
@@ -1123,17 +1157,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc084c50>
       </div><!-- /.container-fluid -->
     </nav>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fb858900>
-
-  <div class="bs-callout bs-callout-danger">
-    <h4>Plugin dependency</h4>
-    <p>The responsive navbar requires the <a href="../javascript/#collapse">collapse plugin</a> to be included in your version of Bootstrap.</p>
-  </div>
-
-  <div class="bs-callout bs-callout-warning">
-    <h4>Make navbars accessible</h4>
-    <p>Be sure to add a <code>role="navigation"</code> to every navbar to help with accessibility.</p>
-  </div>
+Liquid error: undefined method `join' for #<String:0x007f9a1b04ffa8>
 
 
   <h2 id="navbar-brand-image">Brand image</h2>
@@ -1149,7 +1173,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb858900>
       </div>
     </nav>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fb87bec8>
+Liquid error: undefined method `join' for #<String:0x007f9a1b04f530>
 
 
   <h2 id="navbar-forms">Forms</h2>
@@ -1178,7 +1202,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb87bec8>
       </div>
     </nav>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fb87b3b0>
+Liquid error: undefined method `join' for #<String:0x007f9a1b04ebd0>
 
   <div class="bs-callout bs-callout-warning">
     <h4>Mobile device caveats</h4>
@@ -1211,7 +1235,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb87b3b0>
       </div>
     </nav>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fb87a8e8>
+Liquid error: undefined method `join' for #<String:0x007f9a1b04e338>
 
   <div class="bs-callout bs-callout-warning">
     <h4>Context-specific usage</h4>
@@ -1261,7 +1285,7 @@ Liquid error: undefined method `join' for "\n<p class=\"navbar-text\">Signed in 
       </div>
     </nav>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fb879bc8>
+Liquid error: undefined method `join' for #<String:0x007f9a1b04d8e8>
 
 
   <h2 id="navbar-component-alignment">Component alignment</h2>
@@ -1300,7 +1324,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb879bc8>
       </div>
     </nav>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fb879498>
+Liquid error: undefined method `join' for #<String:0x007f9a1b04d208>
 
   <div class="bs-callout bs-callout-danger">
     <h4>Body padding required</h4>
@@ -1336,7 +1360,7 @@ Liquid error: undefined method `join' for "\nbody { padding-top: 70px; }\n":Stri
       </div>
     </nav>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fb878688>
+Liquid error: undefined method `join' for #<String:0x007f9a1b04c330>
 
   <div class="bs-callout bs-callout-danger">
     <h4>Body padding required</h4>
@@ -1374,7 +1398,7 @@ Liquid error: undefined method `join' for "\nbody { padding-bottom: 70px; }\n":S
       </div>
     </nav>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fb8830d8>
+Liquid error: undefined method `join' for #<String:0x007f9a1b0269f0>
 
 
   <h2 id="navbar-inverted">Inverted navbar</h2>
@@ -1404,7 +1428,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb8830d8>
       </div><!-- /.container-fluid -->
     </nav>
   </div><!-- /example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fb881c88>
+Liquid error: undefined method `join' for #<String:0x007f9a1b025e38>
 </div>
 
 <div class="bs-docs-section">
@@ -1426,7 +1450,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb881c88>
       <li class="active">Data</li>
     </ol>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd807cb0>
+Liquid error: undefined method `join' for #<String:0x007f9a1b05fae8>
 </div>
 
 <div class="bs-docs-section">
@@ -1439,36 +1463,36 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd807cb0>
   <div class="bs-example">
     <nav>
       <ul class="pagination">
-        <li><a href="#">&laquo;</a></li>
+        <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
         <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
+        <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
       </ul>
     </nav>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd826980>
+Liquid error: undefined method `join' for #<String:0x007f9a1a81f248>
 
   <h3>Disabled and active states</h3>
   <p>Links are customizable for different circumstances. Use <code>.disabled</code> for unclickable links and <code>.active</code> to indicate the current page.</p>
   <div class="bs-example">
     <nav>
       <ul class="pagination">
-        <li class="disabled"><a href="#">&laquo;</a></li>
+        <li class="disabled"><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
         <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
+        <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
      </ul>
    </nav>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd825e90>
-  <p>You can optionally swap out active or disabled anchors for <code>&lt;span&gt;</code> to remove click functionality while retaining intended styles.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fd825698>
+Liquid error: undefined method `join' for #<String:0x007f9a1a81e870>
+  <p>You can optionally swap out active or disabled anchors for <code>&lt;span&gt;</code>, or omit the anchor in the case of the previous/next arrows, to remove click functionality while retaining intended styles.</p>
+Liquid error: undefined method `join' for #<String:0x007f9a1a81dd80>
 
 
   <h3>Sizing</h3>
@@ -1476,39 +1500,39 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd825698>
   <div class="bs-example">
     <nav>
       <ul class="pagination pagination-lg">
-        <li><a href="#">&laquo;</a></li>
+        <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
         <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
+        <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
       </ul>
     </nav>
     <nav>
       <ul class="pagination">
-        <li><a href="#">&laquo;</a></li>
+        <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
         <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
+        <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
       </ul>
     </nav>
     <nav>
       <ul class="pagination pagination-sm">
-        <li><a href="#">&laquo;</a></li>
+        <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
         <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
+        <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
       </ul>
     </nav>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd8249c8>
+Liquid error: undefined method `join' for #<String:0x007f9a1a81d470>
 
 
   <h2 id="pagination-pager">Pager</h2>
@@ -1524,19 +1548,19 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd8249c8>
       </ul>
     </nav>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd8241a8>
+Liquid error: undefined method `join' for #<String:0x007f9a1a81cb10>
 
   <h3>Aligned links</h3>
   <p>Alternatively, you can align each link to the sides:</p>
   <div class="bs-example">
     <nav>
       <ul class="pager">
-        <li class="previous"><a href="#">&larr; Older</a></li>
-        <li class="next"><a href="#">Newer &rarr;</a></li>
+        <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+        <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
       </ul>
     </nav>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd82edb0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a8ec158>
 
 
   <h3>Optional disabled state</h3>
@@ -1544,12 +1568,12 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd82edb0>
   <div class="bs-example">
     <nav>
       <ul class="pager">
-        <li class="previous disabled"><a href="#">&larr; Older</a></li>
-        <li class="next"><a href="#">Newer &rarr;</a></li>
+        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+        <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
       </ul>
     </nav>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd82f6c0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a8ef5d8>
 </div>
 
 <div class="bs-docs-section">
@@ -1564,7 +1588,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd82f6c0>
     <h5>Example heading <span class="label label-default">New</span></h5>
     <h6>Example heading <span class="label label-default">New</span></h6>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd83ec88>
+Liquid error: undefined method `join' for #<String:0x007f9a1a8fe588>
 
   <h3>Available variations</h3>
   <p>Add any of the below mentioned modifier classes to change the appearance of a label.</p>
@@ -1576,7 +1600,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd83ec88>
     <span class="label label-warning">Warning</span>
     <span class="label label-danger">Danger</span>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd83f7a0>
+Liquid error: undefined method `join' for #<String:0x007f9a1a8ffac8>
 
   <div class="bs-callout bs-callout-info">
     <h4>Have tons of labels?</h4>
@@ -1596,7 +1620,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd83f7a0>
       Messages <span class="badge">4</span>
     </button>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd8459e8>
+Liquid error: undefined method `join' for #<String:0x007f9a1a905a68>
 
   <h4>Self collapsing</h4>
   <p>When there are no new or unread items, badges will simply collapse (via CSS's <code>:empty</code> selector) provided no content exists within.</p>
@@ -1615,7 +1639,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd8459e8>
       <li role="presentation"><a href="#">Messages <span class="badge">3</span></a></li>
     </ul>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd844f48>
+Liquid error: undefined method `join' for #<String:0x007f9a1a904a50>
 </div>
 
 <div class="bs-docs-section">
@@ -1629,9 +1653,9 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd844f48>
       <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd84d030>
+Liquid error: undefined method `join' for #<String:0x007f9a1a90d038>
   <p>To make the jumbotron full width, and without rounded corners, place it outside all <code>.container</code>s and instead add a <code>.container</code> within.</p>
-Liquid error: undefined method `join' for #<String:0x007fc5fd84cbf8>
+Liquid error: undefined method `join' for #<String:0x007f9a1a90cc28>
 </div>
 
 <div class="bs-docs-section">
@@ -1643,7 +1667,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd84cbf8>
       <h1>Example page header <small>Subtext for header</small></h1>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd86eed8>
+Liquid error: undefined method `join' for #<String:0x007f9a1c827a40>
 </div>
 
 <div class="bs-docs-section">
@@ -1677,7 +1701,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd86eed8>
       </div>
     </div>
   </div><!-- /.bs-example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fd87c9c0>
+Liquid error: undefined method `join' for #<String:0x007f9a1c84cd68>
 
   <h3 id="thumbnails-custom-content">Custom content</h3>
   <p>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.</p>
@@ -1715,7 +1739,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd87c9c0>
       </div>
     </div>
   </div><!-- /.bs-example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fb85fd18>
+Liquid error: undefined method `join' for #<String:0x007f9a1c857ad8>
 </div>
 
 <div class="bs-docs-section">
@@ -1745,7 +1769,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb85fd18>
       <strong>Oh snap!</strong> Change a few things up and try submitting again.
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc816cc0>
+Liquid error: undefined method `join' for #<String:0x007f9a1b032200>
 
   <h2 id="alerts-dismissible">Dismissible alerts</h2>
   <p>Build on any alert by adding an optional <code>.alert-dismissible</code> and close button.</p>
@@ -1759,7 +1783,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc816cc0>
       <strong>Warning!</strong> Better check yourself, you're not looking too good.
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc814c40>
+Liquid error: undefined method `join' for #<String:0x007f9a1b030ec8>
 
   <div class="bs-callout bs-callout-warning">
     <h4>Ensure proper behavior across all devices</h4>
@@ -1782,7 +1806,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc814c40>
       <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc8141c8>
+Liquid error: undefined method `join' for #<String:0x007f9a1b0302e8>
 </div>
 
 <div class="bs-docs-section">
@@ -1804,7 +1828,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc8141c8>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc8307b0>
+Liquid error: undefined method `join' for #<String:0x007f9a1b080ae0>
 
   <h3 id="progress-label">With label</h3>
   <p>Remove the <code>.sr-only</code> class from within the progress bar to show a visible percentage. For low percentages, consider adding a <code>min-width</code> to ensure the label's text is fully visible.</p>
@@ -1815,7 +1839,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc8307b0>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc83b840>
+Liquid error: undefined method `join' for #<String:0x007f9a1b08ba30>
 
   <h3 id="progress-low-percentages">Low percentages</h3>
   <p>Progress bars representing low single digit percentages, as well as 0%, include a <code>min-width: 20px;</code> for legibility.</p>
@@ -1831,7 +1855,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc83b840>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc83af08>
+Liquid error: undefined method `join' for #<String:0x007f9a1b08afe0>
 
 
   <h3 id="progress-alternatives">Contextual alternatives</h3>
@@ -1858,7 +1882,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc83af08>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc83a8a0>
+Liquid error: undefined method `join' for #<String:0x007f9a1b08ab30>
 
   <h3 id="progress-striped">Striped</h3>
   <p>Uses a gradient to create a striped effect. Not available in IE8.</p>
@@ -1884,7 +1908,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc83a8a0>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc839e50>
+Liquid error: undefined method `join' for #<String:0x007f9a1b08a068>
 
   <h3 id="progress-animated">Animated</h3>
   <p>Add <code>.active</code> to <code>.progress-bar-striped</code> to animate the stripes right to left. Not available in IE9 and below.</p>
@@ -1894,7 +1918,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc839e50>
     </div>
     <button type="button" class="btn btn-default bs-docs-activate-animated-progressbar" data-toggle="button" aria-pressed="false" autocomplete="off">Toggle animation</button>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc838820>
+Liquid error: undefined method `join' for #<String:0x007f9a1b0889e8>
 
   <h3 id="progress-stacked">Stacked</h3>
   <p>Place multiple bars into the same <code>.progress</code> to stack them.</p>
@@ -1911,7 +1935,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc838820>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc838280>
+Liquid error: undefined method `join' for #<String:0x007f9a1b088560>
 </div>
 
 <div class="bs-docs-section">
@@ -1971,7 +1995,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc838280>
       </a>
     </div>
   </div><!-- /.bs-example -->
-Liquid error: undefined method `join' for #<String:0x007fc5fc8489f0>
+Liquid error: undefined method `join' for #<String:0x007f9a1b098c80>
 
   <p>The classes <code>.pull-left</code> and <code>.pull-right</code> also exist and were previously used as part of the media component, but are deprecated for that use as of v3.3.0. They are approximately equivalent to <code>.media-left</code> and <code>.media-right</code>, except that <code>.media-right</code> should be placed after the <code>.media-body</code> in the html.</p>
   <h3 id="media-alignment">Media alignment</h3>
@@ -2008,7 +2032,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc8489f0>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc848298>
+Liquid error: undefined method `join' for #<String:0x007f9a1b0985f0>
 
   <h3 id="media-list">Media list</h3>
   <p>With a bit of extra markup, you can use media inside list (useful for comment threads or articles lists).</p>
@@ -2055,7 +2079,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc848298>
       </li>
     </ul>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc853800>
+Liquid error: undefined method `join' for #<String:0x007f9a1c8645a8>
 </div>
 
 <div class="bs-docs-section">
@@ -2074,7 +2098,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc853800>
       <li class="list-group-item">Vestibulum at eros</li>
     </ul>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc882420>
+Liquid error: undefined method `join' for #<String:0x007f9a1a956cb0>
 
   <h3 id="list-group-badges">Badges</h3>
   <p>Add the badges component to any list group item and it will automatically be positioned on the right.</p>
@@ -2094,7 +2118,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc882420>
       </li>
     </ul>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc880738>
+Liquid error: undefined method `join' for #<String:0x007f9a1a9551f8>
 
   <h3 id="list-group-linked">Linked items</h3>
   <p>Linkify list group items by using anchor tags instead of list items (that also means a parent <code>&lt;div&gt;</code> instead of an <code>&lt;ul&gt;</code>). No need for individual parents around each element.</p>
@@ -2109,7 +2133,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc880738>
       <a href="#" class="list-group-item">Vestibulum at eros</a>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc88b098>
+Liquid error: undefined method `join' for #<String:0x007f9a1a95f428>
 
   <h3 id="list-group-disabled">Disabled items</h3>
   <p>Add <code>.disabled</code> to a <code>.list-group-item</code> to gray it out to appear disabled.</p>
@@ -2124,7 +2148,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc88b098>
       <a href="#" class="list-group-item">Vestibulum at eros</a>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc88a698>
+Liquid error: undefined method `join' for #<String:0x007f9a1a95eb90>
 
   <h3 id="list-group-contextual-classes">Contextual classes</h3>
   <p>Use contextual classes to style list items, default or linked. Also includes <code>.active</code> state.</p>
@@ -2148,7 +2172,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc88a698>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc8891a8>
+Liquid error: undefined method `join' for #<String:0x007f9a1a95d628>
 
   <h3 id="list-group-custom-content">Custom content</h3>
   <p>Add nearly any HTML within, even for linked list groups like the one below.</p>
@@ -2168,7 +2192,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc8891a8>
       </a>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc888730>
+Liquid error: undefined method `join' for #<String:0x007f9a1a95ca48>
 </div>
 
 <div class="bs-docs-section">
@@ -2185,7 +2209,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fc888730>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fb86acb8>
+Liquid error: undefined method `join' for #<String:0x007f9a1c87f178>
 
   <h3 id="panels-heading">Panel with heading</h3>
   <p>Easily add a heading container to your panel with <code>.panel-heading</code>. You may also include any <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> with a <code>.panel-title</code> class to add a pre-styled heading.</p>
@@ -2206,7 +2230,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb86acb8>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fb8691b0>
+Liquid error: undefined method `join' for #<String:0x007f9a1c87dcd8>
 
   <h3 id="panels-footer">Panel with footer</h3>
   <p>Wrap buttons or secondary text in <code>.panel-footer</code>. Note that panel footers <strong>do not</strong> inherit colors and borders when using contextual variations as they are not meant to be in the foreground.</p>
@@ -2218,7 +2242,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fb8691b0>
       <div class="panel-footer">Panel footer</div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd883f90>
+Liquid error: undefined method `join' for #<String:0x007f9a1c8846f0>
 
   <h3 id="panels-alternatives">Contextual alternatives</h3>
   <p>Like other components, easily make a panel more meaningful to a particular context by adding any of the contextual state classes.</p>
@@ -2264,7 +2288,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd883f90>
       </div>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd883388>
+Liquid error: undefined method `join' for #<String:0x007f9a1c887508>
 
   <h3 id="panels-tables">With tables</h3>
   <p>Add any non-bordered <code>.table</code> within a panel for a seamless design. If there is a <code>.panel-body</code>, we add an extra border to the top of the table for separation.</p>
@@ -2309,7 +2333,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd883388>
       </table>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd8820f0>
+Liquid error: undefined method `join' for #<String:0x007f9a1c8862e8>
 
   <p>If there is no panel body, the component moves from panel header to table without interruption.</p>
   <div class="bs-example">
@@ -2350,7 +2374,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd8820f0>
       </table>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd8811c8>
+Liquid error: undefined method `join' for #<String:0x007f9a1c885348>
 
 
   <h3 id="panels-list-group">With list groups</h3>
@@ -2373,7 +2397,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd8811c8>
       </ul>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fd880a20>
+Liquid error: undefined method `join' for #<String:0x007f9a1c884c68>
 </div>
 
 <div class="bs-docs-section">
@@ -2387,7 +2411,7 @@ Liquid error: undefined method `join' for #<String:0x007fc5fd880a20>
       <iframe class="embed-responsive-item" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
     </div>
   </div>
-Liquid error: undefined method `join' for #<String:0x007fc5fc8ffba0>
+Liquid error: undefined method `join' for #<String:0x007f9a1b0a3c48>
 </div>
 
 <div class="bs-docs-section">
@@ -2437,7 +2461,7 @@ Liquid error: undefined method `join' for "\n<div class=\"well well-sm\">...</di
   <a href="#dropdowns">Dropdowns</a>
   <ul class="nav">
     <li><a href="#dropdowns-example">Example</a></li>
-    <li><a href="#dropdowns-alignment">Alignment options</a></li>
+    <li><a href="#dropdowns-alignment">Alignment</a></li>
     <li><a href="#dropdowns-headers">Headers</a></li>
     <li><a href="#dropdowns-divider">Divider</a></li>
     <li><a href="#dropdowns-disabled">Disabled menu items</a></li>
@@ -2451,7 +2475,7 @@ Liquid error: undefined method `join' for "\n<div class=\"well well-sm\">...</di
     <li><a href="#btn-groups-sizing">Sizing</a></li>
     <li><a href="#btn-groups-nested">Nesting</a></li>
     <li><a href="#btn-groups-vertical">Vertical variation</a></li>
-    <li><a href="#btn-groups-justified">Justified link variation</a></li>
+    <li><a href="#btn-groups-justified">Justified button groups</a></li>
   </ul>
 </li>
 <li>
@@ -2479,7 +2503,7 @@ Liquid error: undefined method `join' for "\n<div class=\"well well-sm\">...</di
   <ul class="nav">
     <li><a href="#nav-tabs">Tabs</a></li>
     <li><a href="#nav-pills">Pills</a></li>
-    <li><a href="#nav-justified">Justified nav</a></li>
+    <li><a href="#nav-justified">Justified</a></li>
     <li><a href="#nav-disabled-links">Disabled links</a></li>
     <li><a href="#nav-dropdowns">Using dropdowns</a></li>
   </ul>
