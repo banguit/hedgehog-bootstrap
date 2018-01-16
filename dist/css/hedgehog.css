@@ -8108,23 +8108,26 @@ h6 {
 }
 .wrapper header .navbar-nav li a:hover,
 .wrapper header .navbar-nav li a:active,
-.wrapper header .navbar-nav li a.active {
+.wrapper header .navbar-nav li a.nav-current {
   color: #fff;
   opacity: 0.8;
 }
 .wrapper header .navbar-nav li a.nav-blog:hover,
 .wrapper header .navbar-nav li a.nav-blog:focus,
-.wrapper header .navbar-nav li a.nav-blog:active {
+.wrapper header .navbar-nav li a.nav-blog:active,
+.wrapper header .navbar-nav li a.nav-blog.nav-current {
   background-color: #e87352;
 }
 .wrapper header .navbar-nav li a.nav-things-ive-done:hover,
 .wrapper header .navbar-nav li a.nav-things-ive-done:focus,
-.wrapper header .navbar-nav li a.nav-things-ive-done:active {
+.wrapper header .navbar-nav li a.nav-things-ive-done:active,
+.wrapper header .navbar-nav li a.nav-things-ive-done.nav-current {
   background-color: #60cd9b;
 }
 .wrapper header .navbar-nav li a.nav-about-me:hover,
 .wrapper header .navbar-nav li a.nav-about-me:focus,
-.wrapper header .navbar-nav li a.nav-about-me:active {
+.wrapper header .navbar-nav li a.nav-about-me:active,
+.wrapper header .navbar-nav li a.nav-about-me.nav-current {
   background-color: #ebc85e;
 }
 .wrapper header .page-responsive-header {

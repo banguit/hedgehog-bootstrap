@@ -127,29 +127,47 @@ h1, h2, h3, h4, h5, h6 {
             line-height: 20px;
           }
 
-          &:hover, &:active, &.active {
+          &:hover, &:active, &.nav-current {
             color: #fff;
             opacity: 0.8;
           }
 
           &.nav-blog:hover,
           &.nav-blog:focus,
-          &.nav-blog:active {
+          &.nav-blog:active,
+          &.nav-blog.nav-current {
             background-color: #e87352;
           }
 
           &.nav-things-ive-done:hover,
           &.nav-things-ive-done:focus,
-          &.nav-things-ive-done:active {
+          &.nav-things-ive-done:active,
+          &.nav-things-ive-done.nav-current {
             background-color: #60cd9b;
           }
 
           &.nav-about-me:hover,
           &.nav-about-me:focus,
-          &.nav-about-me:active {
+          &.nav-about-me:active,
+          &.nav-about-me.nav-current {
             background-color: #ebc85e;
           }
         }
+
+        &.nav-things-ive-done:hover,
+        &.nav-things-ive-done:focus,
+        &.nav-things-ive-done:active,
+        &.nav-things-ive-done.nav-current {
+          background-color: #60cd9b;
+        }
+
+        &.nav-about-me:hover,
+        &.nav-about-me:focus,
+        &.nav-about-me:active,
+        &.nav-about-me.nav-current {
+          background-color: #ebc85e;
+        }
+      }
       }
     }
 
