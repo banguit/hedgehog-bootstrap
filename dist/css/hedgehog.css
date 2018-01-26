@@ -8657,7 +8657,7 @@ html.ie9 #post .photo h1 {
   filter: progid:DXImageTransform.Microsoft.dropShadow(color=#000000, offX=1, offY=1);
   -ms-filter: "progid:DXImageTransform.Microsoft.Blur(pixelradius=2.15, enabled='true')";
 }
-#about .photo {
+#page.about-me .photo {
   background: url('../images/me.jpg') no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -8666,12 +8666,12 @@ html.ie9 #post .photo h1 {
   height: 800px;
 }
 @media (max-width: 767px) {
-  #about .photo {
+  #page.about-me .photo {
     background-position: top center;
     height: 650px;
   }
 }
-#about .photo h1 {
+#page.about-me .photo h1 {
   font-weight: bold;
   font-size: 48px;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
@@ -8679,31 +8679,32 @@ html.ie9 #post .photo h1 {
   margin-bottom: 40px;
   line-height: 80px;
 }
-#about .introduction {
+#page.about-me .introduction {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-#about .contacts a,
-#about .contacts a:hover {
+#page.about-me .contacts a,
+#page.about-me .contacts a:hover {
   color: #8a8a8a;
 }
-#about .contacts a:hover .fa-circle {
+#page.about-me .contacts a:hover .fa-circle {
   color: #717171;
 }
-#about .contacts .row > div {
+#page.about-me .contacts .row > div {
   text-align: center;
   height: 150px;
 }
-#about .contacts .row > div .fa-stack {
+#page.about-me .contacts .row > div .fa-stack {
   vertical-align: top;
 }
-#about .contacts .row > div span {
+#page.about-me .contacts .row > div span {
   font-family: 'Montserrat', sans-serif;
   display: block;
   font-size: 12px;
 }
 #blog .photo,
-#post .photo {
+#post .photo,
+#page .photo {
   background: url('../images/blog.jpg') no-repeat center bottom scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -8713,12 +8714,14 @@ html.ie9 #post .photo h1 {
 }
 @media (max-width: 767px) {
   #blog .photo,
-  #post .photo {
+  #post .photo,
+  #page .photo {
     height: 300px;
   }
 }
 #blog .photo h1,
-#post .photo h1 {
+#post .photo h1,
+#page .photo h1 {
   font-weight: bold;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   font-size: 48px;
@@ -8727,21 +8730,25 @@ html.ie9 #post .photo h1 {
   line-height: 80px;
 }
 #blog .content,
-#post .content {
+#post .content,
+#page .content {
   padding-top: 15px;
   padding-bottom: 15px;
 }
 #blog .content .post,
-#post .content .post {
+#post .content .post,
+#page .content .post {
   margin-bottom: 50px;
 }
 #blog .content .post .post-header,
-#post .content .post .post-header {
+#post .content .post .post-header,
+#page .content .post .post-header {
   height: auto;
   padding: 0;
 }
 #blog .content .post .post-header:after,
-#post .content .post .post-header:after {
+#post .content .post .post-header:after,
+#page .content .post .post-header:after {
   background: none repeat scroll 0 0 #ddd;
   border: 0 none;
   content: "";
@@ -8751,69 +8758,81 @@ html.ie9 #post .photo h1 {
   overflow: auto;
 }
 #blog .content .post .post-header h1 a,
-#post .content .post .post-header h1 a {
+#post .content .post .post-header h1 a,
+#page .content .post .post-header h1 a {
   color: #8a8a8a;
   font-size: 35px;
 }
 #blog .content .post .post-header h1 a:hover,
 #post .content .post .post-header h1 a:hover,
+#page .content .post .post-header h1 a:hover,
 #blog .content .post .post-header h1 a:focus,
 #post .content .post .post-header h1 a:focus,
+#page .content .post .post-header h1 a:focus,
 #blog .content .post .post-header h1 a:active,
-#post .content .post .post-header h1 a:active {
+#post .content .post .post-header h1 a:active,
+#page .content .post .post-header h1 a:active {
   color: #a3a3a3;
 }
 #blog .content .post .post-header .post-meta,
-#post .content .post .post-header .post-meta {
+#post .content .post .post-header .post-meta,
+#page .content .post .post-header .post-meta {
   color: #a2a2a2;
   font-size: 14px;
   white-space: nowrap;
 }
 #blog .content .post .post-header .post-meta .post-date:before,
 #post .content .post .post-header .post-meta .post-date:before,
+#page .content .post .post-header .post-meta .post-date:before,
 #blog .content .post .post-header .post-meta .tags:before,
-#post .content .post .post-header .post-meta .tags:before {
+#post .content .post .post-header .post-meta .tags:before,
+#page .content .post .post-header .post-meta .tags:before {
   content: "\00a0 ";
 }
 #blog .content .post .post-header .post-meta .post-date:after,
-#post .content .post .post-header .post-meta .post-date:after {
+#post .content .post .post-header .post-meta .post-date:after,
+#page .content .post .post-header .post-meta .post-date:after {
   content: "\00a0 ";
 }
 #blog .content .post .post-header .post-meta .tags,
-#post .content .post .post-header .post-meta .tags {
+#post .content .post .post-header .post-meta .tags,
+#page .content .post .post-header .post-meta .tags {
   font-family: 'Montserrat', sans-serif;
 }
 #blog .content .post .post-content img,
-#post .content .post .post-content img {
+#post .content .post .post-content img,
+#page .content .post .post-content img {
   max-width: 100%;
 }
 #blog .content .post .post-content .post-card-image-link,
-#post .content .post .post-content .post-card-image-link {
+#post .content .post .post-content .post-card-image-link,
+#page .content .post .post-content .post-card-image-link {
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: 5px;
   float: right;
-  width: 200px;
+  width: 250px;
   margin-left: 2em;
   margin-bottom: 1em;
-  -webkit-box-shadow: 0 0 6px -2px #404040;
+  -webkit-box-shadow: 0 0 6px -2px #aaaaaa;
   /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow: 0 0 6px -2px #404040;
+  -moz-box-shadow: 0 0 6px -2px #aaaaaa;
   /* Firefox 3.5 - 3.6 */
-  box-shadow: 0 0 6px -2px #404040;
+  box-shadow: 0 0 6px -2px #aaaaaa;
   /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 @media (max-width: 767px) {
   #blog .content .post .post-content .post-card-image-link,
-  #post .content .post .post-content .post-card-image-link {
+  #post .content .post .post-content .post-card-image-link,
+  #page .content .post .post-content .post-card-image-link {
     float: none;
     width: 100%;
     margin-left: auto;
   }
 }
 #blog .content .post .post-content .post-card-image,
-#post .content .post .post-content .post-card-image {
+#post .content .post .post-content .post-card-image,
+#page .content .post .post-content .post-card-image {
   width: auto;
   height: 200px;
   background-position: center;
@@ -8824,17 +8843,20 @@ html.ie9 #post .photo h1 {
   background-size: cover;
 }
 #blog .content .post .read-more,
-#post .content .post .read-more {
+#post .content .post .read-more,
+#page .content .post .read-more {
   font-size: 11px;
   padding: 3px 8px;
 }
 #blog .content .post .share,
-#post .content .post .share {
+#post .content .post .share,
+#page .content .post .share {
   border-top: 1px solid #ddd;
   padding: 15px 0;
 }
 #blog .content .post .share a,
-#post .content .post .share a {
+#post .content .post .share a,
+#page .content .post .share a {
   display: inline-block;
   width: 24px;
   height: 24px;
@@ -8844,15 +8866,18 @@ html.ie9 #post .photo h1 {
   margin-right: 10px;
 }
 #blog .content .post .share a.facebook,
-#post .content .post .share a.facebook {
+#post .content .post .share a.facebook,
+#page .content .post .share a.facebook {
   background-color: #3c5a99;
 }
 #blog .content .post .share a.googleplus,
-#post .content .post .share a.googleplus {
+#post .content .post .share a.googleplus,
+#page .content .post .share a.googleplus {
   background-color: #d34935;
 }
 #blog .content .post .share a.twitter,
-#post .content .post .share a.twitter {
+#post .content .post .share a.twitter,
+#page .content .post .share a.twitter {
   background-color: #00b0ed;
 }
 @media (max-width: 767px) {
@@ -8906,7 +8931,7 @@ html.ie9 #post .photo h1 {
 #post .content .post .post-header .back-link span {
   font-family: 'Open Sans', sans-serif;
 }
-#projects .photo {
+#page.projects .photo {
   background: url('../images/projects.jpg') no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -8915,11 +8940,11 @@ html.ie9 #post .photo h1 {
   height: 500px;
 }
 @media (max-width: 767px) {
-  #projects .photo {
+  #page.projects .photo {
     height: 300px;
   }
 }
-#projects .photo h1 {
+#page.projects .photo h1 {
   font-weight: bold;
   font-size: 48px;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
@@ -8927,21 +8952,21 @@ html.ie9 #post .photo h1 {
   margin-bottom: 40px;
   line-height: 80px;
 }
-#projects .content {
+#page.projects .content {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-#projects .content .project-item {
+#page.projects .content .project-item {
   border-left: 10px solid;
   padding-left: 10px;
 }
-#projects .content .fluent-filters {
+#page.projects .content .fluent-filters {
   border-left-color: #b4d076;
 }
-#projects .content .pubwebkit {
+#page.projects .content .pubwebkit {
   border-left-color: #42aad3;
 }
-#projects .fa {
+#page.projects .fa {
   opacity: 0.5;
 }
 /*# sourceMappingURL=hedgehog.css.map */
