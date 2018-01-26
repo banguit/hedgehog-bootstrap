@@ -8787,6 +8787,42 @@ html.ie9 #post .photo h1 {
 #post .content .post .post-content img {
   max-width: 100%;
 }
+#blog .content .post .post-content .post-card-image-link,
+#post .content .post .post-content .post-card-image-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 5px;
+  float: right;
+  width: 200px;
+  margin-left: 2em;
+  margin-bottom: 1em;
+  -webkit-box-shadow: 0 0 6px -2px #404040;
+  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 0 0 6px -2px #404040;
+  /* Firefox 3.5 - 3.6 */
+  box-shadow: 0 0 6px -2px #404040;
+  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+@media (max-width: 767px) {
+  #blog .content .post .post-content .post-card-image-link,
+  #post .content .post .post-content .post-card-image-link {
+    float: none;
+    width: 100%;
+    margin-left: auto;
+  }
+}
+#blog .content .post .post-content .post-card-image,
+#post .content .post .post-content .post-card-image {
+  width: auto;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 #blog .content .post .read-more,
 #post .content .post .read-more {
   font-size: 11px;
