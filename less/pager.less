@@ -4,7 +4,7 @@
 
 .pager {
   border-top: 1px dashed #ddd;
-  padding-top: 35px;
+  padding-top: 25px;
 
   &:extend(.clearfix all);
   li {
@@ -14,10 +14,23 @@
 
     > a,
     > span {
-      color: #333;
+      padding: 10px 15px;
+      margin-top: -5px;
+      color: #fff;
+      background-color: #c6c6c6;
       font-family: @headings-font-family;
       font-size: 11px;
       text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+    }
+
+    a:hover {
+      background-color: #b2b2b2;
+    }
+
+    > i {
+      font-weight: bold;
     }
   }
 }

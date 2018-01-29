@@ -72,40 +72,48 @@
           max-width: 100%;
         }
 
-        .post-card-image-link {
-          position: relative;
+        .post-card {
           display: block;
-          overflow: hidden;
-          float: right;
-          width: 250px;
-          margin-left: 2em;
           margin-bottom: 1em;
-          -webkit-box-shadow: 0 0 6px -2px #aaa;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-          -moz-box-shadow: 0 0 6px -2px #aaa;  /* Firefox 3.5 - 3.6 */
-          box-shadow: 0 0 6px -2px #aaa;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 
-          @media (max-width: @screen-xs-max) {
-            float: none;
-            width: 100%;
-            margin-left: auto;
+          .post-card-image-link {
+            position: relative;
+            overflow: hidden;
+            -webkit-box-shadow: 0 0 6px -2px #aaa;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+            -moz-box-shadow: 0 0 6px -2px #aaa;  /* Firefox 3.5 - 3.6 */
+            box-shadow: 0 0 6px -2px #aaa;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+
+            .post-card-image {
+              width: auto;
+              height: 225px;
+              background-position: center;
+              background-repeat: no-repeat;
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+
+              @media (max-width: @screen-xs-max) {
+                height: 200px;
+              }
+            }
           }
         }
 
-        .post-card-image {
-          width: auto;
-          height: 200px;
-          background-position: center;
-          background-repeat: no-repeat;
-          -webkit-background-size: cover;
-          -moz-background-size: cover;
-          -o-background-size: cover;
-          background-size: cover;
+        .kg-card-markdown {
+          display: block;
         }
       }
 
       .read-more {
         font-size: 11px;
-        padding: 3px 8px;
+        padding: 10px 15px;
+        border: none;
+
+        &:hover {
+          color: #fff;
+          background-color: #c6c6c6;
+        }
       }
 
       .share {
