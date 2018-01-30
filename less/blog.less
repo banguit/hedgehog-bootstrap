@@ -1,6 +1,6 @@
-#blog, #post, #page {
+#blog, #post, #page, #tag {
   .photo {
-    background: url('../images/blog.jpg') no-repeat center bottom scroll;
+    background: url('../images/blog.jpg') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -63,6 +63,15 @@
 
           .tags {
             font-family: @headings-font-family;
+
+            a {
+              color: #a2a2a2;
+              text-decoration: underline;
+
+              &:hover {
+                color: #8a8a8a;
+              }
+            }
           }
         }
       }
@@ -205,6 +214,21 @@
           }
         }
       }
+    }
+  }
+}
+
+#tag {
+  .photo {
+    h1 {
+      margin-bottom: auto;
+    }
+
+    p {
+      font-weight: bold;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 23px;
     }
   }
 }
